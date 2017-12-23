@@ -9,7 +9,8 @@ Homepage: https://www.vaultproject.io/
 Package: vault
 Architecture: amd64
 Depends: ${misc:Depends}
-Description: Vault secures, stores, and tightly controls access to tokens, passwords,
+Description: centrally secure, store, and control access to secrets (client).
+ Vault secures, stores, and tightly controls access to tokens, passwords,
  certificates, API keys, and other secrets in modern computing.
  Vault handles leasing, key revocation, key rolling, and auditing.
  Through a unified API, users can access an encrypted Key/Value store and
@@ -24,7 +25,8 @@ Depends: ${misc:Depends},
          lsb-base (>= 3.2-14),
          adduser,
          vault (= ${source:Version})
-Description: Vault secures, stores, and tightly controls access to tokens, passwords,
+Description: centrally secure, store, and control access to secrets (server).
+ Vault secures, stores, and tightly controls access to tokens, passwords,
  certificates, API keys, and other secrets in modern computing.
  Vault handles leasing, key revocation, key rolling, and auditing.
  Through a unified API, users can access an encrypted Key/Value store and

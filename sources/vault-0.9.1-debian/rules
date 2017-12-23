@@ -10,7 +10,7 @@ export PATH = /go/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 	dh $@ --with=systemd
 
 override_dh_auto_build:
-	make bootstrap dev-dynamic
+	make bootstrap dev
 
 # skip part of the build common tasks
 override_dh_auto_test:
