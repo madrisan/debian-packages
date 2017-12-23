@@ -34,12 +34,7 @@ __get_source_code() {
 }
 
 __install_build_dependencies() {
-   apt-get --quiet update \
-      && DEBIAN_FRONTEND=noninteractive \
-         apt-get install -y \
-            debhelper \
-            devscripts \
-            dh-systemd
+   :
 }
 
 __build_source_code() {
