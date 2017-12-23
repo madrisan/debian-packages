@@ -5,12 +5,6 @@ Maintainer: Davide Madrisan <d.madrisan@gmail.com>
 Build-Depends: debhelper (>= 9), dh-systemd (>= 1.5)
 Standards-Version: 3.9.8
 Homepage: https://www.vaultproject.io/
-Description: Vault secures, stores, and tightly controls access to tokens, passwords,
- certificates, API keys, and other secrets in modern computing.
- Vault handles leasing, key revocation, key rolling, and auditing.
- Through a unified API, users can access an encrypted Key/Value store and
- network encryption-as-a-service, or generate AWS IAM/STS credentials,
- SQL/NoSQL databases, X.509 certificates, SSH credentials, and more.
 
 Package: vault
 Architecture: amd64
