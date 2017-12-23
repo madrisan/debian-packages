@@ -1,0 +1,15 @@
+[Unit]
+Description=HashiCorp's Vault Secrets Store
+After=network-online.target
+
+[Service]
+Type=simple
+PIDFile=/run/vault/vault.pid
+ExecStart=/usr/bin/vault server -config=/etc/vault/config.hcl
+User=vault
+Group=nogroup
+RuntimeDirectory=vault
+RuntimeDirectoryMode=0755
+
+[Install]
+WantedBy=multi-user.target

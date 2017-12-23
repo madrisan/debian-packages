@@ -1,0 +1,4 @@
+/usr/bin/dh-exec
+
+usr/bin/consul
+etc/consul.d/

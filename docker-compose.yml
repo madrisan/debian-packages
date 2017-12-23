@@ -1,0 +1,10 @@
+version: '3'
+services:
+
+  debian9:
+    build:
+      context: .
+      dockerfile: debian9/Dockerfile
+    volumes:
+    - ./output/debian9:/opt/build
+    - ./sources:/opt/sources

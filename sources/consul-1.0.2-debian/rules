@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+
+# output every command that modifies files on the build system.
+export DH_VERBOSE = 1
+export DEB_BUILD_OPTIONS = nocheck
+export GOPATH = /go
+export PATH = /go/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
+
+%:
+	dh $@ --with=systemd
+
+override_dh_auto_build:
+	make dev
+
+# skip part of the build common tasks
+override_dh_auto_test:
+
+override_dh_install:
+	rm -fr debian/consul/usr/bin
+	install -d debian/consul/usr/bin
+	cp --reflink=auto -a ./bin/consul debian/consul/usr/bin/
+	install -d debian/consul/etc/default
+	cp --reflink=auto -a ./debian/consul.default debian/consul/etc/default/consul
+	install -d debian/consul/usr/share/bash-completion/completions
+	cp --reflink=auto -a ./debian/consul.bash_autocompletion debian/consul/usr/share/bash-completion/completions/consul
+	install -d debian/consul/etc/consul.d
+	install -d debian/consul/var/lib/consul
+
+override_dh_systemd_enable:
+	dh_systemd_enable -pconsul --name consul consul.service
+
+override_dh_systemd_start:
+	dh_systemd_start --restart-after-upgrade
+
+# do not install the initscript on Debian 9
+override_dh_installinit:

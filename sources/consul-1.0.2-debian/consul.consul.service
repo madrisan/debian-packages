@@ -1,0 +1,20 @@
+[Unit]
+Description=HashiCorp's Consul Agent
+After=network-online.target
+
+[Service]
+EnvironmentFile=-/etc/default/consul
+Environment=GOMAXPROCS=2
+ExecStart=/usr/bin/consul agent $CONSUL_OPTS -pid-file=/run/consul/consul.pid -data-dir=/var/lib/consul -config-dir=/etc/consul.d
+PIDFile=/run/consul/consul.pid
+ExecReload=/usr/bin/consul reload
+KillSignal=SIGINT
+User=consul
+Group=nogroup
+RuntimeDirectory=consul
+RuntimeDirectoryMode=0755
+StateDirectory=consul
+StateDirectoryMode=0700
+
+[Install]
+WantedBy=multi-user.target

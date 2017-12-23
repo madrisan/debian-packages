@@ -1,0 +1,61 @@
+# package name
+swname="vault"
+# package version
+swver="0.9.1"
+
+# build functions
+
+__get_source_code() {
+   [ -d "${swname}-${swver}-debian" ] || \
+      die "no such folder: $PWD/${swname}-${swver}-debian"
+
+   echo "** - removing the folder ${swname}-${swver} ..."
+   rm -fr "${swname}-${swver}"
+
+   echo "** - cloning the vault git repository with tag v${swver} ..."
+   git clone --branch v${swver} --depth 1 \
+      https://github.com/hashicorp/vault.git \
+      "${swname}-${swver}" || \
+      die "cannot clone the vault repository from GitHub"
+
+   [ -d "${swname}-${swver}" ] || \
+      die "no such folder: $PWD/${swname}-${swver}"
+   cp -pr "${swname}-${swver}-debian" \
+          "${swname}-${swver}/debian"
+
+   rm -fr /go/src/github.com/hashicorp
+   mkdir -p /go/src/github.com/hashicorp
+   # go expect th find the source in the GOPATH (see debian/rules)
+   cp -pr "${swname}-${swver}" /go/src/github.com/hashicorp/${swname}
+
+   # create the original tarball which is expected by debuild
+   #tar -zcf /go/src/github.com/hashicorp/${swname}-${swver}_orig.tar.gz \
+   #         ${swname}-${swver}
+}
+
+__install_build_dependencies() {
+   apt-get --quiet update \
+      && DEBIAN_FRONTEND=noninteractive \
+         apt-get install -y \
+            debhelper \
+            devscripts \
+            dh-systemd
+}
+
+__build_source_code() {
+   cd /go/src/github.com/hashicorp/vault
+   export PATH="/go/bin:/usr/local/go/bin:$PATH"
+   debuild -us -uc -b
+}
+
+__move_packages_to_outdir() {
+   mv ../*.{deb,build,buildinfo,changes} \
+      ${outdir}/
+}
+
+__cleanall() {
+   echo "** - removing temporary build folder ${buildir}/${swname}-${swver} ..."
+   rm -fr ${buildir}/${swname}-${swver}
+   echo "** - removing sources folder ${swname}-${swver} ..."
+   rm -fr ${swname}-${swver}
+}

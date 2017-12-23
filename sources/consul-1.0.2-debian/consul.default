@@ -1,0 +1,16 @@
+# Options to pass to consul.service.
+#
+# Common options:
+#  -bind       : The address that should be bound to for internal cluster
+#                communications.
+#  -bootstrap-expect:
+#                The number of expected servers in the datacenter.
+#  -log-level  : The level of logging to show.
+#  -node       : The name of this node in the cluster (default: hostname).
+#  -retry-join : Address of another agent to join upon starting up;
+#                can be specified multiple times to specify multiple agents
+#                to join.
+#  -server     : Run consul in server mode.
+#
+# See: https://www.consul.io/docs/agent/options.html
+CONSUL_OPTS=

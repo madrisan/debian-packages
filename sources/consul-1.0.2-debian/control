@@ -1,0 +1,17 @@
+Source: consul
+Section: utils
+Priority: optional
+Maintainer: Davide Madrisan <d.madrisan@gmail.com>
+Build-Depends: debhelper (>= 9), dh-systemd (>= 1.5)
+Standards-Version: 3.9.8
+Homepage: https://www.vaultproject.io/
+
+Package: consul
+Architecture: amd64
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         adduser
+Description: Service discovery and configuration tool.
+ Consul is distributed, highly available, and extremely scalable.
+ Consul provides several key features: Service Discovery, Health Checking,
+ Key/Value Storage, Multi-Datacenter.
