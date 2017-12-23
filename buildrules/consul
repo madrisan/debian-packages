@@ -29,8 +29,8 @@ __get_source_code() {
    cp -pr "${swname}-${swver}" /go/src/github.com/hashicorp/${swname}
 
    # create the original tarball which is expected by debuild
-   #tar -zcf /go/src/github.com/hashicorp/${swname}-${swver}_orig.tar.gz \
-   #         ${swname}-${swver}
+   tar -zcf /go/src/github.com/hashicorp/${swname}_${swver}.orig.tar.gz \
+            ${swname}-${swver}
 }
 
 __install_build_dependencies() {
@@ -40,11 +40,11 @@ __install_build_dependencies() {
 __build_source_code() {
    cd /go/src/github.com/hashicorp/${swname}
    export PATH="/go/bin:/usr/local/go/bin:$PATH"
-   debuild -us -uc -b
+   debuild -us -uc
 }
 
 __move_packages_to_outdir() {
-   mv ../*.{deb,build,buildinfo,changes} \
+   mv ../*.{build,buildinfo,changes,deb,dsc,*.orig.tar.*} \
       ${outdir}/
 }
 
