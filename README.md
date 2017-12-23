@@ -4,8 +4,23 @@
 
 ## Supported packages
 
- * HashiCorp Vault (version 0.9.1)
- * HashiCorp Consul (version 1.0.2)
+![](images/HashiCorp-Vault-logo.png?raw=true)
+
+#### HashiCorp Vault - version 0.9.1
+
+_A Tool for Managing Secrets_.
+
+Official website: [HashiCorp Vault](https://www.vaultproject.io/)
+
+---
+
+![](images/HashiCorp-Consul-logo.png?raw=true)
+
+#### HashiCorp Consul - version 1.0.2
+
+_Service Discovery and Configuration Made Easy_.
+
+Official website: [HashiCorp Consul](https://www.consul.io/)
 
 ## How to create the .deb packages
 
