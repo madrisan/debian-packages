@@ -22,11 +22,22 @@ _Service Discovery and Configuration Made Easy_.
 
 Official website: [HashiCorp Consul](https://www.consul.io/)
 
+---
+
+![Docker Compose](https://github.com/docker/compose/blob/master/logo.png?raw=true "Docker Compose Logo")
+
+#### Docker Compose - version 1.18.0 :boom: alpha
+
+_Define and run multi-container applications with Docker_
+
+Official website: [Docker Compose](https://github.com/docker/compose/)
+
 ## How to create the .deb packages
 
 You can use the provided make file and enter the commands:
 
-    make package PKG=consul
     make package PKG=vault
+    make package PKG=consul
+    make package PKG=docker-compose
 
 Docker (tested with Docker-CE) and Docker Compose must be installed in order the make command to work.
