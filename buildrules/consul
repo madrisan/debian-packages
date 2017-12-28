@@ -44,7 +44,8 @@ __build_source_code() {
 }
 
 __move_packages_to_outdir() {
-   mv ../*.{build,buildinfo,changes,deb,dsc,*.orig.tar.*} \
+   mv ../*.{build,buildinfo,changes,deb,dsc} \
+      ../${swname}_${swver}-*.debian.tar.* \
       ${outdir}/
 }
 
