@@ -54,6 +54,4 @@ __cleanall() {
    rm -fr ${buildir}/${swname}-${swver}
    echo "** - removing sources folder ${swname}-${swver} ..."
    rm -fr ${swname}-${swver}
-   echo "** removing debian tarball created by debuild ..."
-   rm -f ${srcdir}/${swname}_${swver}-*.debian.tar.*
 }
