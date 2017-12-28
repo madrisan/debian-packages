@@ -52,7 +52,8 @@ __install_build_dependencies() {
       docopt \
       jsonschema \
       pyyaml \
-      texttable
+      texttable \
+      websocket
 }
 
 __build_source_code() {
