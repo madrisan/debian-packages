@@ -7,7 +7,7 @@ Standards-Version: 3.9.8
 Homepage: https://www.vaultproject.io/
 
 Package: consul
-Architecture: amd64
+Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
          adduser

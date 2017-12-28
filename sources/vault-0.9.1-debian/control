@@ -7,7 +7,7 @@ Standards-Version: 3.9.8
 Homepage: https://www.vaultproject.io/
 
 Package: vault
-Architecture: amd64
+Architecture: any
 Depends: ${misc:Depends}
 Description: centrally secure, store, and control access to secrets (client).
  Vault secures, stores, and tightly controls access to tokens, passwords,
