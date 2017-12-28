@@ -1,0 +1,102 @@
+# package name
+swname="docker-compose"
+# package version
+swver="1.18.0"
+
+# build functions
+
+__get_source_code() {
+   [ -d "${swname}-${swver}-debian" ] || \
+      die "no such folder: $PWD/${swname}-${swver}-debian"
+
+   echo "** - removing the folder ${swname}-${swver} ..."
+   rm -fr "${swname}-${swver}"
+
+   echo "** - cloning the ${swname} git repository with tag v${swver} ..."
+   git clone --branch ${swver} --depth 1 \
+      https://github.com/docker/compose.git \
+         "${swname}-${swver}" || \
+         die "cannot clone the ${swname} repository from GitHub"
+
+   [ -d "${swname}-${swver}" ] || \
+      die "no such folder: $PWD/${swname}-${swver}"
+
+   # create the original tarball which is expected by debuild
+   tar -zcf ${swname}_${swver}.orig.tar.gz \
+            ${swname}-${swver}
+
+   cp -pr "${swname}-${swver}-debian" \
+          "${swname}-${swver}/debian"
+}
+
+__install_build_dependencies() {
+   apt-get --quiet update \
+      && DEBIAN_FRONTEND=noninteractive \
+         apt-get install -y \
+            python-pip      \
+      && rm -rf /var/lib/apt/lists/* \
+      && rm -rf /var/cache/apt/archives/*
+
+   echo "** - installing deps declared in requirements-build.txt ..."
+   pip install -q -r \
+      ${swname}-${swver}/requirements-build.txt
+   # pip show pyinstaller
+   #  --> /usr/local/lib/python2.7/dist-packages
+
+   # install required Python dependencies not declared
+   # in requirements-build.txt
+   pip install -q \
+      cached-property \
+      docker \
+      dockerpty \
+      docopt \
+      jsonschema \
+      pyyaml \
+      texttable
+}
+
+__build_source_code() {
+   # create a copy of the source files because otherwise
+   # debuild will complain later for modified sources
+   cp -pr ${swname}-${swver} ${buildir}/
+
+   pushd ${buildir}/${swname}-${swver} >/dev/null
+
+   # create compose/GITSHA required by pyinstaller
+   git rev-parse --short HEAD > compose/GITSHA
+
+   # create the finale binary 'dist/docker-compose'
+   pyinstaller docker-compose.spec
+
+   pyinstaller_warn="build/docker-compose/warndocker-compose.txt"
+   [ -f "$pyinstaller_warn" ] &&
+    { echo "PyInstaller WARNING:"
+      while read ln; do echo -e "\t${ln}"; done <$pyinstaller_warn; }
+
+   # test the binary
+   echo "** - testing the binary created by PyInstaller ..."
+   ./dist/docker-compose version || exit 1
+
+   cp -p ./dist/docker-compose /root/docker-compose
+   rm -fr ${buildir}/${swname}-${swver}
+
+   popd >/dev/null
+
+   cd ${swname}-${swver}
+   debuild -us -uc
+   rm -f /root/docker-compose
+}
+
+__move_packages_to_outdir() {
+   mv ../*.{build,buildinfo,changes,deb,dsc,*.orig.tar.*} \
+      ${outdir}/
+}
+
+__cleanall() {
+   echo "** - removing temporary build folder ${buildir}/${swname}-${swver} ..."
+   rm -fr ${buildir}/${swname}-${swver}
+   echo "** - removing sources folder ${swname}-${swver} ..."
+   rm -fr ${swname}-${swver}
+   echo "** removing debian tarball created by debuild ..."
+   rm -f ${srcdir}/${swname}_${swver}-*.debian.tar.*
+}

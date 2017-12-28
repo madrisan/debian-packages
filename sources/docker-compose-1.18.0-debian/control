@@ -1,0 +1,20 @@
+Source: docker-compose
+Section: admin
+Priority: optional
+Maintainer: Davide Madrisan <d.madrisan@gmail.com>
+Build-Depends:
+ debhelper (>= 9),
+ python (>= 2.6.6-3),
+ python-pip
+Standards-Version: 3.9.8
+X-Python-Version: >= 2.5
+Homepage: http://docs.docker.com/compose/
+
+Package: docker-compose
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: Punctual, lightweight development environments using Docker.
+ docker-compose is a service management software built on top of docker. Define
+ your services and their relationships in a simple YAML file, and let compose
+ handle the rest.

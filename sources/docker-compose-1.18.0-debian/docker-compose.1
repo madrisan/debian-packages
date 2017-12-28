@@ -1,0 +1,193 @@
+.TH DOCKER-COMPOSE "1" "July 2015" "docker-compose" "User Commands"
+.SH NAME
+docker-compose \- Define and run multi\-container applications with Docker.
+.SH SYNOPSIS
+.B docker\-compose
+[\fIOPTIONS\fR] [\fICOMMAND\fR] [\fIARGS\fR]...
+.SH DESCRIPTION
+.PP
+docker-compose allows you to define a multi-container application with all of its dependencies in a
+single file, then spin the application up in a single command. The application?s structure and configuration are held in a single place, which makes spinning up applications simple and repeatable everywhere.
+.SH OPTIONS
+.TP
+\fB\-f\fR, \fB\-\-file\fR FILE
+Specify an alternate compose file (default: docker\-compose.yml)
+.TP
+\fB\-p\fR, \fB\-\-project\-name\fR NAME
+Specify an alternate project name (default: directory name)
+.TP
+\fB\-\-verbose\fR
+Show more output
+.TP
+\fB\-v\fR, \fB\-\-version\fR
+Print version and exit
+.SH COMMANDS
+.SS
+build
+Build or rebuild services
+.TP
+\fB\-\-no\-cache\fR
+Do not use cache when building the image.
+.SS
+help
+Displays help and usage information on a command.
+.SS
+kill
+Forces running containers to stop by sending a SIGKILL signal.
+.TP
+\fB\-s\fR SIGNAL
+SIGNAL to send to the container. Default signal is SIGKILL.
+.SS
+logs
+View output from containers.
+.TP
+\fB\-\-no\-color\fR
+Produce a monochrome output.
+.SS
+port
+Print the public port for a port binding
+.TP
+\fB\-\-protocol=proto\fR
+Choose the 4th layer protocol, tcp or udp. Default is tcp.
+.TP
+\fB\-\-index=index\fR
+Index of the container if there are multiple instances of a service. Default is 1.
+.SS
+ps
+List containers.
+.TP
+\fB\-q\fR
+Only display IDs.
+.SS
+pull
+Pulls service images from Docker registry.
+.TP
+\fB\-\-allow\-insecure\-ssl\fR
+Allow insecure connections to the Docker registry.
+.SS
+restart
+Restart running containers.
+.TP
+\fB\-t\fR, \fB\-\-timeout\fR \fITIMEOUT\fR
+Specify a shutdown timeout in seconds. Default is 10.
+.SS
+rm
+Remove stopped service containers
+.TP
+\fB\-f\fR, \fB\-\-force\fR
+Do not ask to confirm removal.
+.TP
+\fB\-v\fR
+Remove volumes associated with containers.
+.SS
+run
+Run a one\-off command on a service. By default linked services will be started, unless they are
+already running.
+.TP
+\fB\-\-allow\-insecure\-ssl\fR
+Allow insecure connections to the Docker registry.
+.TP
+\fB\-d\fR
+Detached mode. Run container in the background, print new container name.
+.TP
+\fB\-\-entrypoint\fR \fICMD\fR
+Override the entrypoint of the image with \fICMD\fR.
+.TP
+\fB\-e\fR KEY=VAL
+Set an environment variable. Can be used multiple times.
+.TP
+\fB\-u\fR, \fB\-\-user=\fR\fIUSER\fR
+Run as a specific \fIUSER\fR, a username or uid.
+.TP
+\fB\-\-no\-deps\fR
+Do not start linked services.
+.TP
+\fB\-\-rm\fR
+Remove container after run. This option is ignored in the detached mode.
+.TP
+\fB\-\-service\-ports\fR
+Run command with the service's ports enabled and mapped to the host.
+.TP
+\fB\-T\fR
+Disable pseudo tty allocation. By default a tty is allocated.
+.SS
+scale
+Set number of containers to run for a service. Numbers are specified in the form \fBservice=num\fR
+as arguments.
+.PP
+.RS
+.nf
+# docker\-compose scale web=2 worker=3
+.SS
+start
+Start existing containers.
+.SS
+stop
+Stop running containers without removing them.
+.TP
+\fB\-t\fR, \fB\-\-timeout\fR \fITIMEOUT\fR
+Specify a shutdown timeout in seconds. Default is 10.
+.SS
+up
+Build, (re)create, start and attach to containers.  If there are existing containers for a service, `docker-compose up` will stop and recreate them (preserving mounted volumes with volumes-from), so that changes in `docker-compose.yml` are picked up. If you do not want existing
+containers to be recreated, `docker-compose up --no-recreate` will re-use existing containers.
+.TP
+\fB\-\-allow\-insecure\-ssl\fR
+Allow insecure connections to the Docker registry.
+.TP
+\fB\-d\fR
+Detached mode. Run container in the background, print new container name.
+.TP
+\fB\-\-no\-color\fR
+Produce a monochrome output.
+.TP
+\fB\-\-no\-deps\fR
+Do not start linked services.
+.TP
+\fB\-\-x\-smart\-recreate\fR
+Only recreate containers whose configuration or image needs to be updated. This feature is
+experimental.
+.TP
+\fB\-\-no\-recreate\fR
+If containers already exist, do not recreate them.
+.TP
+\fB\-\-no\-build\fR
+Do not build an image even if it is missing.
+.TP
+\fB\-t\fR, \fB\-\-timeout\fR \fITIMEOUT\fR
+Specify a shutdown timeout in seconds. Default is 10.
+.SS
+migrate\-to\-labels
+Recreate containers to add labels. If docker-compose detects containers that were created without
+labels, it will refuse to run so that you don't end up with two sets of them.
+.SH ENVIRONMENTAL VARIABLES
+Several environmental variables are available to configure docker\-compose behavior.
+.PP
+Variables starting with \fIDOCKER_\fR are the same as those used to configure the
+Docker command\-line client. If you're using boot2docker, \fIeval "$(boot2docker shellinit)"\fR
+will set them to their correct values.
+
+.SS COMPOSE_PROJECT_NAME
+Sets the project name, which is prepended to the name of every container started by docker\-compose.
+Defaults to the \fIbasename\fR of the current working directory.
+.SS COMPOSE_FILE
+Specify what file to read configuration from. If not provided, docker\-compose will look
+for \fIdocker-compose.yml\fR in the current working directory, and then each parent
+directory successively, until found.
+.SS DOCKER_HOST
+Sets the URL of the docker daemon. As with the Docker client, defaults to
+\fIunix:///var/run/docker.sock\fR.
+.SS DOCKER_TLS_VERIFY
+When set to anything other than an empty string, enables TLS communication with
+the daemon.
+.SS DOCKER_CERT_PATH
+Configures the path to the \fIca.pem\fR, \fIcert.pem\fR, and \fIkey.pem\fR files used for TLS
+verification.  Defaults to \fI~/.docker\fR.
+
+.SH "SEE ALSO"
+.PP
+Full documentation for docker-compose at: <http://docs.docker.com/compose/>
+.SH AUTHOR
+
+This manual page was written by Dariusz Dwornikowski <dariusz.dwornikowski@cs.put.poznan.pl> based
+on the official docker compose documentation.

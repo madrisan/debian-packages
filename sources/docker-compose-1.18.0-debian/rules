@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+
+override_dh_auto_install:
+
+override_dh_install:
+	rm -fr debian/docker-compose/usr/bin
+	install -d debian/docker-compose/usr/bin
+	cp --reflink=auto -a /root/docker-compose debian/docker-compose/usr/bin/docker-compose
+	install -d debian/docker-compose/usr/share/bash-completion/completions
+	install -m644 contrib/completion/bash/docker-compose debian/docker-compose/usr/share/bash-completion/completions
+	install -d debian/docker-compose/usr/share/zsh/vendor-completions
+	install -m644 contrib/completion/zsh/_docker-compose debian/docker-compose/usr/share/zsh/vendor-completions
+
+# skip part of the build common tasks
+override_dh_auto_test:
