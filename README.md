@@ -4,7 +4,7 @@
 
 ## Supported packages
 
-![](images/HashiCorp-Vault-logo.png?raw=true)
+![](images/HashiCorp-Vault-logo.png?raw=true "HashiCorp Vault")
 
 #### HashiCorp Vault - version 0.9.1
 
@@ -14,7 +14,7 @@ Official website: [HashiCorp Vault](https://www.vaultproject.io/)
 
 ---
 
-![](images/HashiCorp-Consul-logo.png?raw=true)
+![](images/HashiCorp-Consul-logo.png?raw=true "HashiCorp Consul")
 
 #### HashiCorp Consul - version 1.0.2
 
