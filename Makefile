@@ -9,7 +9,11 @@
 #    COMPOSE: /usr/local/bin/docker-compose
 #    DISTRO: debian9
 
-COMPOSE := /usr/local/bin/docker-compose
+COMPOSE := $(shell command -v docker-compose 2>/dev/null)
+ifndef COMPOSE
+        $(error "please install docker-compose or adjust the PATH environment")
+endif
+
 DISTRO := debian9
 # We set 'TMPDIR' to work-around the execution error:
 #    /usr/local/bin/docker-compose: \
