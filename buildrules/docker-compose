@@ -91,6 +91,7 @@ __build_source_code() {
 __move_packages_to_outdir() {
    mv ../*.{build,buildinfo,changes,deb,dsc} \
       ../${swname}_${swver}-*.debian.tar.* \
+      ../${swname}_${swver}.orig.tar.gz \
       ${outdir}/
 }
 
@@ -99,6 +100,4 @@ __cleanall() {
    rm -fr ${buildir}/${swname}-${swver}
    echo "** - removing sources folder ${swname}-${swver} ..."
    rm -fr ${swname}-${swver}
-   echo "** - removing .orig tarball ..."
-   rm -f ${swname}_${swver}.orig.tar.gz
 }

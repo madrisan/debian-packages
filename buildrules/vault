@@ -46,6 +46,7 @@ __build_source_code() {
 __move_packages_to_outdir() {
    mv ../*.{build,buildinfo,changes,deb,dsc} \
       ../${swname}_${swver}-*.debian.tar.* \
+      /go/src/github.com/hashicorp/${swname}_${swver}.orig.tar.gz \
       ${outdir}/
 }
 
