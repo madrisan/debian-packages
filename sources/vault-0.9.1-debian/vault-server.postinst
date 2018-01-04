@@ -9,7 +9,7 @@ set -eu
 
 case "${1}" in
     configure)
-        if ! getent passwd consul > /dev/null 2>&1
+        if ! getent passwd vault > /dev/null 2>&1
         then
             adduser \
                 --home /run/vault \

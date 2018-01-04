@@ -13,13 +13,13 @@ _A Tool for Managing Secrets_.
 Official website: [HashiCorp Vault](https://www.vaultproject.io/)
 
 * Debian source package:
-  * [[vault_0.9.1-1.dsc]][vault-dsc]
+  * [[vault_0.9.1-2.dsc]][vault-dsc]
   * [[vault_0.9.1.orig.tar.gz]][vault-orig]
-  * [[vault_0.9.1-1.debian.tar.xz]][vault-debian]
+  * [[vault_0.9.1-2.debian.tar.xz]][vault-debian]
 
 * Debian 9 (Stretch) binary packages:
-  * [[vault_0.9.1-1_amd64.deb]][vault-debpkg]
-  * [[vault-server_0.9.1-1_amd64.deb]][vault-server-debpkg]
+  * [[vault_0.9.1-2_amd64.deb]][vault-debpkg]
+  * [[vault-server_0.9.1-2_amd64.deb]][vault-server-debpkg]
 
 ---
 
@@ -90,8 +90,8 @@ and on Fedora 27 with docker-ce 17.12.0 and docker-compose 1.17.1.
 [docker-compose-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.18.0-1.dsc
 [docker-compose-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.18.0.orig.tar.gz
 
-[vault-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.9.1-1_amd64.deb
-[vault-server-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault-server_0.9.1-1_amd64.deb
-[vault-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.9.1-1.debian.tar.xz
-[vault-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.9.1-1.dsc
+[vault-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.9.1-2_amd64.deb
+[vault-server-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault-server_0.9.1-2_amd64.deb
+[vault-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.9.1-2.debian.tar.xz
+[vault-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.9.1-2.dsc
 [vault-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.9.1.orig.tar.gz
