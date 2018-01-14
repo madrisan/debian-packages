@@ -10,7 +10,8 @@
 
 _A Tool for Managing Secrets_.
 
-Official website: [HashiCorp Vault](https://www.vaultproject.io/)
+* Official website: https://www.vaultproject.io
+* Git repository: https://github.com/hashicorp/vault
 
 * Debian source package:
   * [[vault_0.9.1-2.dsc]][vault-dsc]
@@ -29,7 +30,8 @@ Official website: [HashiCorp Vault](https://www.vaultproject.io/)
 
 _Service Discovery and Configuration Made Easy_.
 
-Official website: [HashiCorp Consul](https://www.consul.io/)
+* Official website: https://www.consul.io
+* Git repository: https://github.com/hashicorp/consul
 
 * Debian source package:
   * [[consul_1.0.2-1.dsc]][consul-dsc]
@@ -47,7 +49,8 @@ Official website: [HashiCorp Consul](https://www.consul.io/)
 
 _Define and run multi-container applications with Docker_
 
-Official website: [Docker Compose](https://github.com/docker/compose/)
+* Official website: https://docs.docker.com/compose/overview/
+* Git repository: https://github.com/docker/compose/
 
 * Debian source package:
   * [[docker-compose_1.18.0-1.dsc]][docker-compose-dsc]
