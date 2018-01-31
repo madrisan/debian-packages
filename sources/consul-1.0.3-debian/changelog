@@ -1,0 +1,11 @@
+consul (1.0.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Davide Madrisan <d.madrisan@gmail.com>  Wed, 31 Dec 2018 21:40:16 +0000
+
+consul (1.0.2-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Davide Madrisan <d.madrisan@gmail.com>  Sat, 23 Dec 2018 16:27:50 +0000

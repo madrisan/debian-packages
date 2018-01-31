@@ -26,7 +26,7 @@ _A Tool for Managing Secrets_.
 
 ![](images/HashiCorp-Consul-logo.png?raw=true "HashiCorp Consul")
 
-#### HashiCorp Consul - version 1.0.2
+#### HashiCorp Consul - version 1.0.3
 
 _Service Discovery and Configuration Made Easy_.
 
@@ -34,12 +34,12 @@ _Service Discovery and Configuration Made Easy_.
 * Git repository: https://github.com/hashicorp/consul
 
 * Debian source package:
-  * [[consul_1.0.2-1.dsc]][consul-dsc]
-  * [[consul_1.0.2.orig.tar.gz]][consul-orig]
-  * [[consul_1.0.2-1.debian.tar.xz]][consul-debian]
+  * [[consul_1.0.3-1.dsc]][consul-dsc]
+  * [[consul_1.0.3.orig.tar.gz]][consul-orig]
+  * [[consul_1.0.3-1.debian.tar.xz]][consul-debian]
 
 * Debian 9 (Stretch) binary package:
-  * [[consul_1.0.2-1_amd64.deb]][consul-debpkg]
+  * [[consul_1.0.3-1_amd64.deb]][consul-debpkg]
 
 ---
 
