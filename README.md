@@ -83,10 +83,10 @@ and on Fedora 27 with docker-ce 17.12.0 and docker-compose 1.17.1.
 [docker-compose]: https://docs.docker.com/compose/
 [pyinstaller]: http://www.pyinstaller.org/
 
-[consul-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.0.2-1_amd64.deb
-[consul-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.0.2-1.debian.tar.xz
-[consul-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.0.2-1.dsc
-[consul-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.0.2.orig.tar.gz
+[consul-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.0.3-1_amd64.deb
+[consul-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.0.3-1.debian.tar.xz
+[consul-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.0.3-1.dsc
+[consul-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.0.3.orig.tar.gz
 
 [docker-compose-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.18.0-1_amd64.deb
 [docker-compose-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.18.0-1.debian.tar.xz
