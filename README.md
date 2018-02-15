@@ -45,7 +45,7 @@ _Service Discovery and Configuration Made Easy_.
 
 ![Docker Compose](https://github.com/docker/compose/blob/master/logo.png?raw=true "Docker Compose Logo")
 
-#### Docker Compose - version 1.18.0 :boom: alpha
+#### Docker Compose - version 1.19.0 :boom: alpha
 
 _Define and run multi-container applications with Docker_
 
@@ -53,12 +53,12 @@ _Define and run multi-container applications with Docker_
 * Git repository: https://github.com/docker/compose/
 
 * Debian source package:
-  * [[docker-compose_1.18.0-1.dsc]][docker-compose-dsc]
-  * [[docker-compose_1.18.0.orig.tar.gz]][docker-compose-orig]
-  * [[docker-compose_1.18.0-1.debian.tar.xz]][docker-compose-debian]
+  * [[docker-compose_1.19.0-1.dsc]][docker-compose-dsc]
+  * [[docker-compose_1.19.0.orig.tar.gz]][docker-compose-orig]
+  * [[docker-compose_1.19.0-1.debian.tar.xz]][docker-compose-debian]
 
 * Debian 9 (Stretch) binary package:
-  * [[docker-compose_1.18.0-1_amd64.deb]][docker-compose-debpkg]
+  * [[docker-compose_1.19.0-1_amd64.deb]][docker-compose-debpkg]
 
 The binary package will install the executable `/usr/bin/docker-compose`, created by
 [PyInstaller][pyinstaller]. This should increase the portability of the Debian package
@@ -88,10 +88,10 @@ and on Fedora 27 with docker-ce 17.12.0 and docker-compose 1.17.1.
 [consul-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.0.3-1.dsc
 [consul-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.0.3.orig.tar.gz
 
-[docker-compose-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.18.0-1_amd64.deb
-[docker-compose-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.18.0-1.debian.tar.xz
-[docker-compose-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.18.0-1.dsc
-[docker-compose-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.18.0.orig.tar.gz
+[docker-compose-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.19.0-1_amd64.deb
+[docker-compose-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.19.0-1.debian.tar.xz
+[docker-compose-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.19.0-1.dsc
+[docker-compose-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.19.0.orig.tar.gz
 
 [vault-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.9.3-1_amd64.deb
 [vault-server-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault-server_0.9.3-1_amd64.deb

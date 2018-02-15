@@ -4,6 +4,7 @@
 # Usage:
 #    make package DISTRO=debian9 PKG=vault
 #    make package PKG=consul
+#    make package PKG=docker-compose
 #
 # Default values:
 #    COMPOSE: /usr/local/bin/docker-compose
