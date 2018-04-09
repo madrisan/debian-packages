@@ -1,3 +1,9 @@
+vault (0.9.6-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Davide Madrisan <d.madrisan@gmail.com>  Mon, 09 Apr 2018 21:54:11 +0000
+
 vault (0.9.3-1) unstable; urgency=low
 
   * New upstream release.
