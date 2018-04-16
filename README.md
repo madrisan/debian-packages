@@ -6,7 +6,7 @@
 
 ![](images/HashiCorp-Vault-logo.png?raw=true "HashiCorp Vault")
 
-#### HashiCorp Vault - version 0.9.6
+#### HashiCorp Vault - version 0.10.0
 
 _A Tool for Managing Secrets_.
 
@@ -14,13 +14,13 @@ _A Tool for Managing Secrets_.
 * Git repository: https://github.com/hashicorp/vault
 
 * Debian source package:
-  * [[vault_0.9.6-1.dsc]][vault-dsc]
-  * [[vault_0.9.6.orig.tar.gz]][vault-orig]
-  * [[vault_0.9.6-1.debian.tar.xz]][vault-debian]
+  * [[vault_0.10.0-1.dsc]][vault-dsc]
+  * [[vault_0.10.0.orig.tar.gz]][vault-orig]
+  * [[vault_0.10.0-1.debian.tar.xz]][vault-debian]
 
 * Debian 9 (Stretch) binary packages:
-  * [[vault_0.9.6-1_amd64.deb]][vault-debpkg]
-  * [[vault-server_0.9.6-1_amd64.deb]][vault-server-debpkg]
+  * [[vault_0.10.0-1_amd64.deb]][vault-debpkg]
+  * [[vault-server_0.10.0-1_amd64.deb]][vault-server-debpkg]
 
 ---
 
@@ -93,8 +93,8 @@ and on Fedora 27 with docker-ce 17.12.0 and docker-compose 1.17.1.
 [docker-compose-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.19.0-1.dsc
 [docker-compose-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.19.0.orig.tar.gz
 
-[vault-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.9.6-1_amd64.deb
-[vault-server-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault-server_0.9.6-1_amd64.deb
-[vault-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.9.6-1.debian.tar.xz
-[vault-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.9.6-1.dsc
-[vault-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.9.6.orig.tar.gz
+[vault-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.10.0-1_amd64.deb
+[vault-server-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault-server_0.10.0-1_amd64.deb
+[vault-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.10.0-1.debian.tar.xz
+[vault-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.10.0-1.dsc
+[vault-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.10.0.orig.tar.gz
