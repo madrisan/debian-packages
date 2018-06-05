@@ -76,8 +76,9 @@ and enter the commands
 [Docker-CE][docker-ce] and [Docker Compose][docker-compose] must be installed in order
 the make command to work.
 
-Tested on Fedora 26 with docker-ce 17.09.1 and docker-compose 1.17.0
-and on Fedora 27 with docker-ce 17.12.0 and docker-compose 1.17.1.
+Tested on Fedora 26 with docker-ce 17.09.1 and docker-compose 1.17.0,
+on Fedora 27 with docker-ce 17.12.0 and docker-compose 1.17.1,
+and on Fedora 28 with docker-ce-18.03.1.
 
 [docker-ce]: https://www.docker.com/community-edition/
 [docker-compose]: https://docs.docker.com/compose/
