@@ -26,7 +26,7 @@ _A Tool for Managing Secrets_.
 
 ![](images/HashiCorp-Consul-logo.png?raw=true "HashiCorp Consul")
 
-#### HashiCorp Consul - version 1.1.0
+#### HashiCorp Consul - version 1.2.2
 
 _Service Discovery and Configuration Made Easy_.
 
@@ -34,12 +34,12 @@ _Service Discovery and Configuration Made Easy_.
 * Git repository: https://github.com/hashicorp/consul
 
 * Debian source package:
-  * [[consul_1.1.0-1.dsc]][consul-dsc]
-  * [[consul_1.1.0.orig.tar.gz]][consul-orig]
-  * [[consul_1.1.0-1.debian.tar.xz]][consul-debian]
+  * [[consul_1.2.2-1.dsc]][consul-dsc]
+  * [[consul_1.2.2.orig.tar.gz]][consul-orig]
+  * [[consul_1.2.2-1.debian.tar.xz]][consul-debian]
 
 * Debian 9 (Stretch) binary package:
-  * [[consul_1.1.0-1_amd64.deb]][consul-debpkg]
+  * [[consul_1.2.2-1_amd64.deb]][consul-debpkg]
 
 ---
 
@@ -84,10 +84,10 @@ and on Fedora 28 with docker-ce-18.03.1.
 [docker-compose]: https://docs.docker.com/compose/
 [pyinstaller]: http://www.pyinstaller.org/
 
-[consul-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.1.0-1_amd64.deb
-[consul-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.1.0-1.debian.tar.xz
-[consul-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.1.0-1.dsc
-[consul-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.1.0.orig.tar.gz
+[consul-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.2.2-1_amd64.deb
+[consul-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.2.2-1.debian.tar.xz
+[consul-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.2.2-1.dsc
+[consul-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.2.2.orig.tar.gz
 
 [docker-compose-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.19.0-1_amd64.deb
 [docker-compose-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.19.0-1.debian.tar.xz

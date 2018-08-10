@@ -1,3 +1,9 @@
+consul (1.2.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Davide Madrisan <d.madrisan@gmail.com>  Fri, 10 Jun 2018 13:11:11 +0200
+
 consul (1.1.0-1) unstable; urgency=low
 
   * New upstream release.
