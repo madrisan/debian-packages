@@ -13,6 +13,7 @@ RUN mkdir -p \
     && chmod -R 755 "$GOPATH"
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
+# development environment for golang projects
 RUN apt-get --quiet update \
     && DEBIAN_FRONTEND=noninteractive \
        apt-get install -y \
@@ -20,6 +21,18 @@ RUN apt-get --quiet update \
           debhelper  \
           devscripts \
           dh-systemd \
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /var/cache/apt/archives/*
+
+# development environment for python projects
+RUN apt-get --quiet update \
+    && DEBIAN_FRONTEND=noninteractive \
+       apt-get install -y \
+          dh-python   \
+          python-all  \
+          python3-all \
+          python-setuptools  \
+          python3-setuptools \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/cache/apt/archives/*
 

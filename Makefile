@@ -1,10 +1,11 @@
 # Build Debian packages in a Docker container
-# Copyright (c) 2017 Davide Madrisan <davide.madrisan@gmail.com>
+# Copyright (c) 2017-2018 Davide Madrisan <davide.madrisan@gmail.com>
 #
 # Usage:
 #    make package DISTRO=debian9 PKG=vault
 #    make package PKG=consul
 #    make package PKG=docker-compose
+#    make package PKG=py-zabbix
 #
 # Default values:
 #    COMPOSE: /usr/local/bin/docker-compose

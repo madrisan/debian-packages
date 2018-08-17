@@ -64,6 +64,26 @@ The binary package will install the executable `/usr/bin/docker-compose`, create
 [PyInstaller][pyinstaller]. This should increase the portability of the Debian package
 because no extra Python libraries need to be installed.
 
+---
+
+![py-zabbix](https://www.python.org/static/community_logos/python-logo.png?raw=true "Python Logo")
+
+#### py-zabbix - version 1.1.3
+
+_Python modules for work with zabbix_
+
+* Official website: https://py-zabbix.readthedocs.io/en/latest/
+* Git repository: https://github.com/adubkov/py-zabbix
+
+* Debian source package:
+  * [[py-zabbix_1.1.3-1.dsc]][py-zabbix-dsc]
+  * [[py-zabbix_1.1.3.orig.tar.gz]][py-zabbix-orig]
+  * [[py-zabbix_1.1.3-1.debian.tar.xz]][py-zabbix-debian]
+
+* Debian 9 (Stretch) binary package:
+  * [[python-pyzabbix_1.1.3-1_all.deb]][python-zabbix-debpkg]
+  * [[python3-pyzabbix_1.1.3-1_all.deb]][python3-zabbix-debpkg]
+
 ## How to manually create the .deb packages and source files
 
 You can make use of the provided Makefile (requires the `make` tool)
@@ -72,6 +92,7 @@ and enter the commands
     make package PKG=consul
     make package PKG=vault
     make package PKG=docker-compose
+    make package PKG=py-zabbix
 
 [Docker-CE][docker-ce] and [Docker Compose][docker-compose] must be installed in order
 the make command to work.
@@ -99,3 +120,9 @@ and on Fedora 28 with docker-ce-18.03.1.
 [vault-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.10.4-1.debian.tar.xz
 [vault-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.10.4-1.dsc
 [vault-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.10.4.orig.tar.gz
+
+[python-zabbix-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-pyzabbix_1.1.3-1_all.deb
+[python3-zabbix-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python3-pyzabbix_1.1.3-1_all.deb
+[py-zabbix-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/py-zabbix_1.1.3-1.debian.tar.xz
+[py-zabbix-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/py-zabbix_1.1.3-1.dsc
+[py-zabbix-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/py-zabbix_1.1.3.orig.tar.gz
