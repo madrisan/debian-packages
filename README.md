@@ -93,6 +93,7 @@ and enter the commands
     make package PKG=vault
     make package PKG=docker-compose
     make package PKG=py-zabbix
+    make package DISTRO=debian8 PKG=py-zabbix
 
 [Docker-CE][docker-ce] and [Docker Compose][docker-compose] must be installed in order
 the make command to work.
