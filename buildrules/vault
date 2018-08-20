@@ -34,7 +34,34 @@ __get_source_code() {
 }
 
 __install_build_dependencies() {
-   :
+   apt-get --quiet update \
+      && DEBIAN_FRONTEND=noninteractive \
+         apt-get install -y \
+            apt-transport-https \
+            ca-certificates \
+            curl \
+            lsb-release \
+      && rm -rf /var/lib/apt/lists/* \
+      && rm -rf /var/cache/apt/archives/*
+
+   codename=$(lsb_release -c -s)
+
+   echo "deb https://deb.nodesource.com/node_8.x $codename main" \
+      > /etc/apt/sources.list.d/nodejs-node_8.x.list
+   curl -sS https://deb.nodesource.com/gpgkey/nodesource.gpg.key \
+      | apt-key add -
+   echo "deb https://dl.yarnpkg.com/debian/ stable main" \
+      > /etc/apt/sources.list.d/yarn.list
+   curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg \
+      | apt-key add -
+
+   apt-get --quiet update \
+      && DEBIAN_FRONTEND=noninteractive \
+         apt-get install -y \
+           nodejs \
+           yarn   \
+      && rm -rf /var/lib/apt/lists/* \
+      && rm -rf /var/cache/apt/archives/*
 }
 
 __build_source_code() {
