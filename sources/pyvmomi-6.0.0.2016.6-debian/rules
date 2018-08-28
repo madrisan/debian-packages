@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+export PYBUILD_DESTDIR_python2=debian/python-pyvmomi/
+export PYBUILD_DESTDIR_python3=debian/python3-pyvmomi/
+
+%:
+	dh $@ --with python2,python3 --buildsystem=pybuild
+
+# The test suite currently requires external network access, so we
+# can't enable it.
+#
+override_dh_auto_test:
+
+override_dh_installdocs:
+	dh_installdocs -X.rst
+	cp -a docs/*

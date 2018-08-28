@@ -84,6 +84,27 @@ _Python modules for work with zabbix_
   * [[python-pyzabbix_1.1.3-1_all.deb]][python-zabbix-debpkg]
   * [[python3-pyzabbix_1.1.3-1_all.deb]][python3-zabbix-debpkg]
 
+---
+
+![py-pyvmomi](https://upload.wikimedia.org/wikipedia/commons/9/9a/Vmware.svg "VMWare Logo")
+
+#### pyvmomi - version 6.0.0.2016.6
+
+_VMware vSphere API Python Binding_
+
+* Official website: https://github.com/vmware/pyvmomi
+* Git repository: https://github.com/vmware/pyvmomi
+
+* Debian source package:
+  * [[pyvmomi_6.0.0.2016.6-1.dsc]][pyvmomi-dsc]
+  * [[pyvmomi_6.0.0.2016.6.orig.tar.gz]][pyvmomi-orig]
+  * [[pyvmomi_6.0.0.2016.6-1.debian.tar.xz]][pyvmomi-debian]
+
+* Debian 9 (Stretch) binary package:
+  * [[python-pyvmomi_6.0.0.2016.6-1_all.deb]][python-pyvmomi-debpkg]
+  * [[python-pyvmomi-doc_6.0.0.2016.6-1_all.deb]][python-pyvmomi-doc-debpkg]
+  * [[python3-pyvmomi_6.0.0.2016.6-1_all.deb]][python3-pyvmomi-debpkg]
+
 ## How to manually create the .deb packages and source files
 
 You can make use of the provided Makefile (requires the `make` tool)
@@ -94,6 +115,7 @@ and enter the commands
     make package PKG=docker-compose
     make package PKG=py-zabbix
     make package DISTRO=debian8 PKG=py-zabbix
+    make package PKG=pyvmomi
 
 [Docker-CE][docker-ce] and [Docker Compose][docker-compose] must be installed in order
 the make command to work.
@@ -127,3 +149,10 @@ and on Fedora 28 with docker-ce-18.03.1.
 [py-zabbix-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/py-zabbix_1.1.3-1.debian.tar.xz
 [py-zabbix-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/py-zabbix_1.1.3-1.dsc
 [py-zabbix-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/py-zabbix_1.1.3.orig.tar.gz
+
+[python-pyvmomi-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-pyvmomi_6.0.0.2016.6-1_all.deb
+[python-pyvmomi-doc-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-pyvmomi-doc_6.0.0.2016.6-1_all.deb
+[python3-pyvmomi-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python3-pyvmomi_6.0.0.2016.6-1_all.deb
+[pyvmomi-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/pyvmomi_6.0.0.2016.6-1.debian.tar.xz
+[pyvmomi-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/pyvmomi_6.0.0.2016.6-1.dsc
+[pyvmomi-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/pyvmomi_6.0.0.2016.6.orig.tar.gz

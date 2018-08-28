@@ -6,6 +6,7 @@
 #    make package PKG=consul
 #    make package PKG=docker-compose
 #    make package PKG=py-zabbix
+#    make package PKG=pyvmomi
 #
 # Default values:
 #    COMPOSE: /usr/local/bin/docker-compose
