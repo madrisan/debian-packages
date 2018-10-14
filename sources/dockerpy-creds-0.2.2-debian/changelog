@@ -1,0 +1,18 @@
+docker-pycreds (0.2.2-1) unstable; urgency=medium
+
+  [ Jason Pleau ]
+  * New upstream release
+  * copyright: update years and use https for the Format field
+  * Update Vcs-* fields to point to salsa.d.o
+  * Bump Standards-Version to 4.1.3
+
+  [ Felipe Sateler ]
+  * Use https url for the watch file
+
+ -- Felipe Sateler <fsateler@debian.org>  Tue, 17 Apr 2018 19:50:42 -0300
+
+docker-pycreds (0.2.1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #847712)
+
+ -- Jason Pleau <jason@jpleau.ca>  Mon, 19 Dec 2016 18:28:24 -0300

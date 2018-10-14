@@ -5,6 +5,8 @@
 #    make package DISTRO=debian9 PKG=vault
 #    make package PKG=consul
 #    make package PKG=docker-compose
+#    make package PKG=docker-py
+#    make package PKG=dockerpy-creds
 #    make package PKG=py-zabbix
 #    make package PKG=pyvmomi
 #

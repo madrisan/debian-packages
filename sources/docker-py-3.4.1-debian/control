@@ -1,0 +1,57 @@
+Source: python-docker
+Section: python
+Priority: optional
+Maintainer: Docker Compose Team <team+docker-compose@tracker.debian.org>
+Uploaders: Jason Pleau <jason@jpleau.ca>,
+ Felipe Sateler <fsateler@debian.org>
+Build-Depends: debhelper (>= 10),
+ dh-python,
+ python-all (>= 2.7),
+ python3-all,
+ python-setuptools,
+ python3-setuptools,
+# setup.py
+ python-requests (>= 2.11.1~),
+ python-six (>= 1.4.0~),
+ python-websocket (>= 0.32.0~),
+ python-dockerpycreds (>= 0.2.2),
+ python-backports.ssl-match-hostname (>= 3.5),
+ python-ipaddress (>=1.0.16),
+# setup.py - python3
+ python3-requests (>= 2.11.1~),
+ python3-six (>= 1.4.0~),
+ python3-websocket (>= 0.32.0~),
+ python3-dockerpycreds (>= 0.2.2),
+# test-requirements.txt
+# python-mock (>= 1.0.1~),
+# python-coverage (>= 3.7.1~),
+# docker.io,
+Standards-Version: 4.2.1
+Homepage: https://github.com/docker/docker-py
+Vcs-Git: https://salsa.debian.org/docker-compose-team/python-docker
+Vcs-Browser: https://salsa.debian.org/docker-compose-team/python-docker
+X-Python3-Version: >= 3.5
+
+Package: python-docker
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends},
+ python-ipaddress (>=1.0.16)
+Breaks: python-magnum (<< 5.0.0),
+ python-senlin (<< 2.0.0),
+ docker-compose (<< 1.21)
+Description: Python wrapper to access docker.io's control socket
+ This package contains oodles of routines that aid in controlling
+ docker.io over it's socket control, the same way the docker.io
+ client controls the daemon.
+ .
+ This package provides Python 2 module bindings only.
+
+Package: python3-docker
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: Python 3 wrapper to access docker.io's control socket
+ This package contains oodles of routines that aid in controlling
+ docker.io over it's socket control, the same way the docker.io
+ client controls the daemon.
+ .
+ This package provides Python 3 module bindings only.

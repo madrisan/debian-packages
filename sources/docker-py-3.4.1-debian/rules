@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=docker
+
+# The pypi bundle includes the tests (https://github.com/docker/docker-py/issues/308), but they're really invasive and fail for reasons I haven't yet diagnosed.
+export PYBUILD_DISABLE=test
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -f docker_py.egg-info/SOURCES.txt
+
+%:
+	dh $@ --with python2,python3 --buildsystem pybuild

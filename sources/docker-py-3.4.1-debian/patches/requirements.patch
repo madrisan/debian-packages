@@ -1,0 +1,62 @@
+From: Tianon Gravi <tianon@debian.org>
+Date: Sun, 8 Nov 2015 10:36:49 -0800
+Subject: Unpin dependencies so newer versions satisfy them appropriately
+
+Forwarded: https://github.com/dotcloud/docker-py/issues/101 (upstream has no interest)
+
+Patch-Name: requirements.patch
+
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1,18 +1,18 @@
+-appdirs==1.4.3
+-asn1crypto==0.22.0
+-backports.ssl-match-hostname==3.5.0.1
+-cffi==1.10.0
+-cryptography==1.9
+-docker-pycreds==0.3.0
+-enum34==1.1.6
+-idna==2.5
+-ipaddress==1.0.18
+-packaging==16.8
+-pycparser==2.17
+-pyOpenSSL==17.0.0
+-pyparsing==2.2.0
+-pypiwin32==219; sys_platform == 'win32' and python_version < '3.6'
+-pypiwin32==220; sys_platform == 'win32' and python_version >= '3.6'
+-requests==2.14.2
+-six==1.10.0
+-websocket-client==0.40.0
++appdirs>=1.4.3
++asn1crypto>=0.22.0
++backports.ssl-match-hostname>=3.5.0.1
++cffi>=1.10.0
++cryptography>=1.9
++docker-pycreds>=0.3.0
++enum34>=1.1.6
++idna>=2.5
++ipaddress>=1.0.18
++packaging>=16.8
++pycparser>=2.17
++pyOpenSSL>=17.0.0
++pyparsing>=2.2.0
++pypiwin32>=219; sys_platform == 'win32' and python_version < '3.6'
++pypiwin32>=220; sys_platform == 'win32' and python_version >= '3.6'
++requests>=2.14.2
++six>=1.10.0
++websocket-client>=0.40.0
+--- a/test-requirements.txt
++++ b/test-requirements.txt
+@@ -1,6 +1,6 @@
+-coverage==3.7.1
+-flake8==3.4.1
+-mock==1.0.1
+-pytest==2.9.1
+-pytest-cov==2.1.0
+-pytest-timeout==1.2.1
++coverage>=3.7.1
++flake8>=3.4.1
++mock>=1.0.1
++pytest>=2.9.1
++pytest-cov>=2.1.0
++pytest-timeout>=1.2.1

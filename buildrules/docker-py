@@ -1,0 +1,72 @@
+# package name
+swname="docker-py"
+debname="python-docker"
+# package version
+swver="3.4.1"
+
+# build functions
+
+__get_source_code() {
+   [ -d "${swname}-${swver}-debian" ] || \
+      die "no such folder: $PWD/${swname}-${swver}-debian"
+
+   echo "** - removing the folder ${swname}-${swver} ..."
+   rm -fr "${swname}-${swver}"
+
+   echo "** - cloning the ${swname} git repository with tag v${swver} ..."
+   git clone --branch ${swver} --depth 1 \
+      https://github.com/docker/docker-py.git \
+         "${swname}-${swver}" || \
+         die "cannot clone the ${swname} repository from GitHub"
+
+   [ -d "${swname}-${swver}" ] || \
+      die "no such folder: $PWD/${swname}-${swver}"
+
+   # create the original tarball which is expected by debuild
+   tar -zcf ${debname}_${swver}.orig.tar.gz \
+            ${swname}-${swver}
+
+   cp -pr "${swname}-${swver}-debian" \
+          "${swname}-${swver}/debian"
+}
+
+__install_build_dependencies() {
+   apt-get --quiet update \
+      && DEBIAN_FRONTEND=noninteractive \
+         apt-get install -y \
+            golang-docker-credential-helpers \
+            python-backports.ssl-match-hostname \
+            python-requests \
+            python3-requests \
+            python-six \
+            python3-six \
+            python-websocket \
+            python3-websocket \
+      && rm -rf /var/lib/apt/lists/* \
+      && rm -rf /var/cache/apt/archives/*
+
+   local_dependencies="\
+/opt/build/packages/python-dockerpycreds_0.2.2-1_all.deb \
+/opt/build/packages/python3-dockerpycreds_0.2.2-1_all.deb"
+
+   dpkg -i ${local_dependencies}
+}
+
+__build_source_code() {
+   cd ${swname}-${swver}
+   debuild -us -uc
+}
+
+__move_packages_to_outdir() {
+   mv ../*.{build*,changes,deb,dsc} \
+      ../${debname}_${swver}-*.debian.tar.* \
+      ../${debname}_${swver}.orig.tar.gz \
+      ${outdir}/
+}
+
+__cleanall() {
+   echo "** - removing temporary build folder ${buildir}/${swname}-${swver} ..."
+   rm -fr ${buildir}/${swname}-${swver}
+   echo "** - removing sources folder ${swname}-${swver} ..."
+   rm -fr ${swname}-${swver}
+}

@@ -1,0 +1,24 @@
+From: Felipe Sateler <fsateler@debian.org>
+Date: Tue, 2 Oct 2018 16:33:29 -0300
+Subject: Drop dependency on ssl-match-hostname backport
+
+The debian package for python has the backport built in. See #86989.
+
+Closes: #909972
+Forwarded: not-needed
+---
+ setup.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index 57b2b5a..553e7b2 100644
+--- a/setup.py
++++ b/setup.py
+@@ -17,7 +17,6 @@ requirements = [
+ ]
+ 
+ extras_require = {
+-    ':python_version < "3.5"': 'backports.ssl_match_hostname >= 3.5',
+     # While not imported explicitly, the ipaddress module is required for
+     # ssl_match_hostname to verify hosts match with certificates via
+     # ServerAltname: https://pypi.python.org/pypi/backports.ssl_match_hostname

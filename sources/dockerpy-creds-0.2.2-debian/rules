@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=dockerpycreds
+
+%:
+	dh $@ --with python2,python3 --buildsystem=pybuild
+
+override_dh_auto_test:
+
+# Tests are potentially interactive as they attempt to connect to the user keyring
+# therefore only run manually. Necessary dependencies:
+# python-pytest,
+# python-pytest-cov,
+# python-flake8,
+# python3-pytest,
+# python3-pytest-cov,
+# python3-flake8,
+# gnome-keyring,
+test:
+	dh_auto_test --buildsystem=pybuild
