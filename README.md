@@ -66,6 +66,24 @@ because no extra Python libraries need to be installed.
 
 ---
 
+![dockerpy-creds](https://www.python.org/static/community_logos/python-logo.png?raw=true "Python Logo")
+
+#### dockerpy-creds - version 0.2.2
+
+_Python bindings for the docker credentials store API_
+
+* Official website: https://docs.docker.com/engine/reference/commandline/login/#/credentials-store
+* Git repository: https://github.com/shin-/dockerpy-creds
+
+* Debian source package:
+  * [[docker-pycreds_0.2.2-1.dsc]][dockerpy-creds-dsc]
+  * [[docker-pycreds_0.2.2.orig.tar.gz]][dockerpy-creds-orig]
+  * [[docker-pycreds_0.2.2-1.debian.tar.xz]][dockerpy-creds-debian]
+
+* Debian 9 (Stretch) binary package:
+  * [[python-dockerpycreds_0.2.2-1_all.deb]][python-dockerpy-creds-debpkg]
+  * [[python3-dockerpycreds_0.2.2-1_all.deb]][python3-dockerpy-creds-debpkg]
+
 ![py-zabbix](https://www.python.org/static/community_logos/python-logo.png?raw=true "Python Logo")
 
 #### py-zabbix - version 1.1.3
@@ -143,6 +161,12 @@ and on Fedora 28 with docker-ce-18.03.1.
 [vault-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.10.4-1.debian.tar.xz
 [vault-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.10.4-1.dsc
 [vault-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_0.10.4.orig.tar.gz
+
+[python-dockerpy-creds-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-dockerpycreds_0.2.2-1_all.deb
+[python3-dockerpy-creds-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python3-dockerpycreds_0.2.2-1_all.deb
+[dockerpy-creds-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-pycreds_0.2.2-1.debian.tar.xz
+[dockerpy-creds-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-pycreds_0.2.2-1.dsc
+[dockerpy-creds-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-pycreds_0.2.2.orig.tar.gz
 
 [python-zabbix-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-pyzabbix_1.1.3-1_all.deb
 [python3-zabbix-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python3-pyzabbix_1.1.3-1_all.deb
