@@ -66,7 +66,7 @@ because no extra Python libraries need to be installed.
 
 ---
 
-![dockerpy-creds](https://www.python.org/static/community_logos/python-logo.png?raw=true "Python Logo")
+![Python packages](https://www.python.org/static/community_logos/python-logo.png?raw=true "Python Logo")
 
 #### dockerpy-creds - version 0.2.2
 
@@ -84,7 +84,21 @@ _Python bindings for the docker credentials store API_
   * [[python-dockerpycreds_0.2.2-1_all.deb]][python-dockerpy-creds-debpkg]
   * [[python3-dockerpycreds_0.2.2-1_all.deb]][python3-dockerpy-creds-debpkg]
 
-![py-zabbix](https://www.python.org/static/community_logos/python-logo.png?raw=true "Python Logo")
+#### docker-py - version 3.4.1
+
+_Docker SDK for Python_
+
+* Official website: https://docker-py.readthedocs.io/en/stable/
+* Git repository: https://github.com/docker/docker-py
+
+* Debian source package:
+  * [[docker-py_3.4.1-2.dsc]][docker-py-dsc]
+  * [[docker-py_3.4.1.orig.tar.gz]][docker-py-orig]
+  * [[docker-py_3.4.1-2.debian.tar.xz]][docker-py-debian]
+
+* Debian 9 (Stretch) binary package:
+  * [[python-docker_3.4.1-2_all.deb]][python-docker-debpkg]
+  * [[python3-docker_3.4.1-2_all.deb]][python3-docker-debpkg]
 
 #### py-zabbix - version 1.1.3
 
@@ -131,6 +145,8 @@ and enter the commands
     make package PKG=consul
     make package PKG=vault
     make package PKG=docker-compose
+    make package PKG=docker-py
+    make package PKG=dockerpy-creds
     make package PKG=py-zabbix
     make package DISTRO=debian8 PKG=py-zabbix
     make package PKG=pyvmomi
@@ -167,6 +183,12 @@ and on Fedora 28 with docker-ce-18.03.1.
 [dockerpy-creds-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-pycreds_0.2.2-1.debian.tar.xz
 [dockerpy-creds-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-pycreds_0.2.2-1.dsc
 [dockerpy-creds-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-pycreds_0.2.2.orig.tar.gz
+
+[python-docker-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-docker_3.4.1-2_all.deb
+[python3-docker-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python3-docker_3.4.1-2_all.deb
+[docker-py-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-docker_3.4.1-2.debian.tar.xz
+[docker-py-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-docker_3.4.1-2.dsc
+[docker-py-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-docker_3.4.1.orig.tar.gz
 
 [python-zabbix-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-pyzabbix_1.1.3-1_all.deb
 [python3-zabbix-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python3-pyzabbix_1.1.3-1_all.deb
