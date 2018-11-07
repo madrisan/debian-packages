@@ -1,7 +1,7 @@
 # package name
 swname="pyvmomi"
 # package version
-swver="6.0.0.2016.6"
+swver="6.7.1"
 
 # build functions
 

@@ -1,0 +1,11 @@
+pyvmomi (6.7.1-1) unstable; urgency=low
+
+  * Update the upstream vSphere 6.7 Update1 Release
+
+ -- Davide Madrisan <d.madrisan@gmail.com>  Wed,  7 Nov 2018 10:12:10 +0200
+
+pyvmomi (6.0.0.2016.6-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Davide Madrisan <d.madrisan@gmail.com>  Tue, 28 Aug 2018 12:18:32 +0200
