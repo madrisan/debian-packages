@@ -131,11 +131,17 @@ _VMware vSphere API Python Binding_
   * [[pyvmomi_6.0.0.2016.6-1.dsc]][pyvmomi-dsc]
   * [[pyvmomi_6.0.0.2016.6.orig.tar.gz]][pyvmomi-orig]
   * [[pyvmomi_6.0.0.2016.6-1.debian.tar.xz]][pyvmomi-debian]
+  * [[pyvmomi_6.7.1-1.dsc]][pyvmomi-dsc-2]
+  * [[pyvmomi_6.7.1.orig.tar.gz]][pyvmomi-orig-2]
+  * [[pyvmomi_6.7.1-1.debian.tar.xz]][pyvmomi-debian-2]
 
 * Debian 9 (Stretch) binary package:
   * [[python-pyvmomi_6.0.0.2016.6-1_all.deb]][python-pyvmomi-debpkg]
   * [[python-pyvmomi-doc_6.0.0.2016.6-1_all.deb]][python-pyvmomi-doc-debpkg]
   * [[python3-pyvmomi_6.0.0.2016.6-1_all.deb]][python3-pyvmomi-debpkg]
+  * [[python-pyvmomi_6.7.1-1_all.deb]][python-pyvmomi-debpkg-2]
+  * [[python-pyvmomi-doc_6.7.1-1_all.deb]][python-pyvmomi-doc-debpkg-2]
+  * [[python3-pyvmomi_6.7.1-1_all.deb]][python3-pyvmomi-debpkg-2]
 
 ## How to manually create the .deb packages and source files
 
@@ -156,7 +162,7 @@ the make command to work.
 
 Tested on Fedora 26 with docker-ce 17.09.1 and docker-compose 1.17.0,
 on Fedora 27 with docker-ce 17.12.0 and docker-compose 1.17.1,
-and on Fedora 28 with docker-ce-18.03.1.
+on Fedora 28 with docker-ce-18.03.1, and on Fedora 29 with docker-ce-18.06.1.ce-3.
 
 [docker-ce]: https://www.docker.com/community-edition/
 [docker-compose]: https://docs.docker.com/compose/
@@ -202,3 +208,10 @@ and on Fedora 28 with docker-ce-18.03.1.
 [pyvmomi-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/pyvmomi_6.0.0.2016.6-1.debian.tar.xz
 [pyvmomi-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/pyvmomi_6.0.0.2016.6-1.dsc
 [pyvmomi-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/pyvmomi_6.0.0.2016.6.orig.tar.gz
+
+[python-pyvmomi-debpkg-2]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-pyvmomi_6.7.1-1_all.deb
+[python-pyvmomi-doc-debpkg-2]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-pyvmomi-doc_6.7.1-1_all.deb
+[python3-pyvmomi-debpkg-2]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python3-pyvmomi_6.7.1-1_all.deb
+[pyvmomi-debian-2]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/pyvmomi_6.7.1-1.debian.tar.xz
+[pyvmomi-dsc-2]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/pyvmomi_6.7.1-1.dsc
+[pyvmomi-orig-2]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/pyvmomi_6.7.1.orig.tar.gz
