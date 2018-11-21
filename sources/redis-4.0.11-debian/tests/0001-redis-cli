@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Show the INFO from "redis-cli"
+
+set -eu
+
+redis-cli INFO

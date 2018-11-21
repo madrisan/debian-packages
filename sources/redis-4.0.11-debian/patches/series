@@ -1,0 +1,6 @@
+0001-fix-ftbfs-on-kfreebsd.patch
+debian-packaging/0002-use-system-jemalloc.patch
+debian-packaging/0003-dpkg-buildflags.patch
+0004-SOURCE_DATE_EPOCH.patch
+debian-packaging/0007-Set-Debian-configuration-defaults.patch
+0010-Use-get_current_dir_name-over-PATHMAX-etc.patch

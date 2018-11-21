@@ -143,6 +143,23 @@ _VMware vSphere API Python Binding_
   * [[python-pyvmomi-doc_6.7.1-1_all.deb]][python-pyvmomi-doc-debpkg-2]
   * [[python3-pyvmomi_6.7.1-1_all.deb]][python3-pyvmomi-debpkg-2]
 
+---
+
+![](images/Redis-logo.svg.png?raw=true "Redis Logo")
+
+#### redis - version 4.0.11
+
+_Redis is an in-memory database that persists on disk_
+
+* Official website: https://redis.io
+* Git repository: https://github.com/antirez/redis
+
+* Debian source package:
+  * ADD-ME
+
+* Debian 9 (Stretch) binary package:
+  * ADD-ME
+
 ## How to manually create the .deb packages and source files
 
 You can make use of the provided Makefile (requires the `make` tool)
@@ -156,6 +173,7 @@ and enter the commands
     make package PKG=py-zabbix
     make package DISTRO=debian8 PKG=py-zabbix
     make package PKG=pyvmomi
+    make package PKG=redis4
 
 [Docker-CE][docker-ce] and [Docker Compose][docker-compose] must be installed in order
 the make command to work.

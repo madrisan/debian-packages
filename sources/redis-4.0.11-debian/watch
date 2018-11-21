@@ -1,0 +1,2 @@
+version=3
+https://redis.io/download https?://download.redis.io/releases/redis-(.*).tar.gz

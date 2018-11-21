@@ -1,0 +1,77 @@
+From: Chris Lamb <lamby@debian.org>
+Date: Fri, 30 Oct 2015 10:53:42 +0000
+Subject: use-system-jemalloc
+
+---
+ src/Makefile  |  5 ++---
+ src/object.c  |  3 +++
+ src/zmalloc.c | 12 ++++++------
+ src/zmalloc.h |  2 +-
+ 4 files changed, 12 insertions(+), 10 deletions(-)
+
+diff --git a/src/Makefile b/src/Makefile
+index 86e0b3fe0602..f7b8cba5c339 100644
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -120,9 +120,8 @@ ifeq ($(MALLOC),tcmalloc_minimal)
+ endif
+ 
+ ifeq ($(MALLOC),jemalloc)
+-	DEPENDENCY_TARGETS+= jemalloc
+-	FINAL_CFLAGS+= -DUSE_JEMALLOC -I../deps/jemalloc/include
+-	FINAL_LIBS+= ../deps/jemalloc/lib/libjemalloc.a
++	FINAL_CFLAGS+= -DUSE_JEMALLOC -I/usr/include/jemalloc/include
++	FINAL_LIBS+= -ljemalloc
+ endif
+ 
+ REDIS_CC=$(QUIET_CC)$(CC) $(FINAL_CFLAGS)
+diff --git a/src/object.c b/src/object.c
+index 4e3080f7359b..1043eb4f30c6 100644
+--- a/src/object.c
++++ b/src/object.c
+@@ -36,6 +36,9 @@
+ #define strtold(a,b) ((long double)strtod((a),(b)))
+ #endif
+ 
++#define je_mallctl mallctl
++#define je_malloc_stats_print malloc_stats_print
++
+ /* ===================== Creation and parsing of objects ==================== */
+ 
+ robj *createObject(int type, void *ptr) {
+diff --git a/src/zmalloc.c b/src/zmalloc.c
+index 094dd80fafd0..9619faa16525 100644
+--- a/src/zmalloc.c
++++ b/src/zmalloc.c
+@@ -62,12 +62,12 @@ void zlibc_free(void *ptr) {
+ #define realloc(ptr,size) tc_realloc(ptr,size)
+ #define free(ptr) tc_free(ptr)
+ #elif defined(USE_JEMALLOC)
+-#define malloc(size) je_malloc(size)
+-#define calloc(count,size) je_calloc(count,size)
+-#define realloc(ptr,size) je_realloc(ptr,size)
+-#define free(ptr) je_free(ptr)
+-#define mallocx(size,flags) je_mallocx(size,flags)
+-#define dallocx(ptr,flags) je_dallocx(ptr,flags)
++#define malloc(size) malloc(size)
++#define calloc(count,size) calloc(count,size)
++#define realloc(ptr,size) realloc(ptr,size)
++#define free(ptr) free(ptr)
++#define mallocx(size,flags) mallocx(size,flags)
++#define dallocx(ptr,flags) dallocx(ptr,flags)
+ #endif
+ 
+ #define update_zmalloc_stat_alloc(__n) do { \
+diff --git a/src/zmalloc.h b/src/zmalloc.h
+index 64f2f36aad5d..d9d20784e23d 100644
+--- a/src/zmalloc.h
++++ b/src/zmalloc.h
+@@ -50,7 +50,7 @@
+ #include <jemalloc/jemalloc.h>
+ #if (JEMALLOC_VERSION_MAJOR == 2 && JEMALLOC_VERSION_MINOR >= 1) || (JEMALLOC_VERSION_MAJOR > 2)
+ #define HAVE_MALLOC_SIZE 1
+-#define zmalloc_size(p) je_malloc_usable_size(p)
++#define zmalloc_size(p) malloc_usable_size(p)
+ #else
+ #error "Newer version of jemalloc required"
+ #endif

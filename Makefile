@@ -9,6 +9,7 @@
 #    make package PKG=dockerpy-creds
 #    make package PKG=py-zabbix
 #    make package PKG=pyvmomi
+#    make package PKG=redis4
 #
 # Default values:
 #    COMPOSE: /usr/local/bin/docker-compose
