@@ -1,4 +1,4 @@
-FROM golang:1.10.1-stretch as compiler
+FROM golang:1.11.5-stretch as compiler
 FROM debian:latest
 
 MAINTAINER "Davide Madrisan" <d.madrisan@gmail.com>
