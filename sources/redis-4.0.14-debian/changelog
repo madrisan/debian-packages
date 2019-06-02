@@ -1,3 +1,31 @@
+redis (5:4.0.14-1) unstable; urgency=medium
+
+  * Backport fixes from Redis 5:
+
+      * b6cd3b3c asyncCloseClientOnOutputBufferLimitReached(): don't free fake clients.
+      * e16402b0 Don't call sdscmp() with shared.maxstring or shared.minstring.
+      * 49d9f411 Fix stringmatchlen() read past buffer bug.
+      * 97192e2d Merge pull request #5569 from maximebedard/backport-4497
+      * 1908aba7 add linkClient(): adds the client and caches the list node.
+      * 239b0857 networking: optimize unlinkClient() in freeClient()
+      * 54b17f98 When replica kills a pending RDB save during SYNC, log it.
+      * b31c08db Move child termination to readSyncBulkPayload.
+      * 21971ac8 Prevent RDB autosave from overwriting full resync results.
+      * 3a91fcbc aof.c: improve indentation and change warning message.
+      * e6f287d5 AOF: discard if we lost EXEC when loading aof.
+      * e0d4c66a Fix AOF comment to report the current behavior.
+      - 60b2537f rewrite BRPOPLPUSH as RPOPLPUSH to propagate.
+      - afc4b36c Don't treat unsupported protocols as fatal errors.
+      * 3c62ad19 HyperLogLog: handle wrong offset in the base case.
+      * cc2b3a68 Fix hyperloglog corruption
+      * e10c79d3 redis-check-aof: fix potential overflow.
+      * 6fa16f58 Fix mismatching keyspace notification classes
+      * 64311052 Fix zlexrangespec mem-leak in genericZrangebylexCommand
+      * b0e86319 Make comment in #5911 stay inside 80 cols.
+      * 39ccce03 Replicas aren't allowed to run the replicaof command
+
+ -- Davide Madrisan <davide/madrisan@gmail.com>  Mon, 03 Jun 2019 11:11:00 +0200
+
 redis (5:4.0.11-3) unstable; urgency=medium
 
   * Stop playing whack-a-mole with nondeterminstic testsuite and run with
