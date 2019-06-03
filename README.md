@@ -147,7 +147,7 @@ _VMware vSphere API Python Binding_
 
 ![](images/Redis-logo.svg.png?raw=true "Redis Logo")
 
-#### redis - version 4.0.11
+#### redis - version 4.0.14
 
 _Redis is an in-memory database that persists on disk_
 
@@ -155,10 +155,16 @@ _Redis is an in-memory database that persists on disk_
 * Git repository: https://github.com/antirez/redis
 
 * Debian source package:
-  * ADD-ME
+  * [redis_4.0.14-1.dsc][redis4-dsc]
+  * [redis_0.11.6.orig.tar.gz][redis4-orig]
+  * [redis_0.11.6-1.debian.tar.xz][redis4-debian]
 
 * Debian 9 (Stretch) binary package:
-  * ADD-ME
+  * [redis_4.0.14-1_all.deb][redis4-debpkg]
+  * [redis-sentinel_4.0.14-1_amd64.deb][redis4-sentinel-debpkg]
+  * [redis-server_4.0.14-1_amd64.deb][redis4-server-debpkg]
+  * [redis-tools-dbgsym_4.0.14-1_amd64.deb][redis4-tools-dbgsym-debpkg]
+  * [redis-tools_4.0.14-1_amd64.deb][redis4-redis-tools-debpkg]
 
 ## How to manually create the .deb packages and source files
 
@@ -233,3 +239,12 @@ on Fedora 28 with docker-ce-18.03.1, and on Fedora 29 with docker-ce-18.06.1.ce-
 [pyvmomi-debian-2]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/pyvmomi_6.7.1-1.debian.tar.xz
 [pyvmomi-dsc-2]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/pyvmomi_6.7.1-1.dsc
 [pyvmomi-orig-2]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/pyvmomi_6.7.1.orig.tar.gz
+
+[redis4-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/redis_4.0.14-1_all.deb
+[redis4-sentinel-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/redis-sentinel_4.0.14-1_amd64.deb
+[redis4-server-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/redis-server_4.0.14-1_amd64.deb
+[redis4-tools-dbgsym-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/redis-tools-dbgsym_4.0.14-1_amd64.deb
+[redis4-redis-tools-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/redis-tools_4.0.14-1_amd64.deb
+[redis4-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/redis_4.0.14-1.debian.tar.xz
+[redis4-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/redis_4.0.14-1.dsc
+[redis4-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/redis_4.0.14.orig.tar.gz
