@@ -16,3 +16,11 @@ services:
     volumes:
     - ./output/debian9:/opt/build
     - ./sources:/opt/sources
+
+  debian10:
+    build:
+      context: .
+      dockerfile: debian10/Dockerfile
+    volumes:
+    - ./output/debian10:/opt/build
+    - ./sources:/opt/sources

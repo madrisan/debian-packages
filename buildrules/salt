@@ -1,0 +1,77 @@
+# package name
+swname="salt"
+# package version
+branch="2019.2.1"
+swver="2019.2.1+ds"
+
+# build functions
+
+__get_source_code() {
+   [ -d "${swname}-${swver}-debian" ] || \
+      die "no such folder: $PWD/${swname}-${swver}-debian"
+
+   echo "** - removing the folder ${swname}-${swver} ..."
+   rm -fr "${swname}-${swver}"
+
+   echo "** - cloning the ${swname} git repository with tag v${branch} ..."
+   git clone --branch ${branch} --depth 1 \
+      https://github.com/saltstack/salt.git \
+         "${swname}-${swver}" || \
+         die "cannot clone the ${swname} repository from GitHub"
+
+   [ -d "${swname}-${swver}" ] || \
+      die "no such folder: $PWD/${swname}-${swver}"
+
+   # create the original tarball which is expected by debuild
+   tar -zcf ${swname}_${swver}.orig.tar.gz \
+            ${swname}-${swver}
+
+   cp -pr "${swname}-${swver}-debian" \
+          "${swname}-${swver}/debian"
+}
+
+__install_build_dependencies() {
+   apt-get --quiet update \
+      && DEBIAN_FRONTEND=noninteractive \
+         apt-get install -y \
+            bash-completion \
+            python-all  \
+            python3-all \
+            python-msgpack \
+            python3-msgpack \
+            python-psutil \
+            python3-psutil \
+            python-requests \
+            python3-requests \
+            python-setuptools  \
+            python3-setuptools \
+            python-six \
+            python3-six \
+            python-sphinx \
+            python3-sphinx \
+            python-tornado \
+            python3-tornado \
+            python-yaml \
+            python3-yaml \
+      && rm -rf /var/lib/apt/lists/* \
+      && rm -rf /var/cache/apt/archives/*
+}
+
+__build_source_code() {
+   cd ${swname}-${swver}
+   debuild -us -uc
+}
+
+__move_packages_to_outdir() {
+   mv ../*.{build*,changes,deb,dsc} \
+      ../${swname}_${swver}-*.debian.tar.* \
+      ../${swname}_${swver}.orig.tar.gz \
+      ${outdir}/
+}
+
+__cleanall() {
+   echo "** - removing temporary build folder ${buildir}/${swname}-${swver} ..."
+   rm -fr ${buildir}/${swname}-${swver}
+   echo "** - removing sources folder ${swname}-${swver} ..."
+   rm -fr ${swname}-${swver}
+}

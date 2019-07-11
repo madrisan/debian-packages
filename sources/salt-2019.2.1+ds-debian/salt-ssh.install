@@ -1,0 +1,2 @@
+conf/roster /etc/salt
+usr/bin/salt-ssh

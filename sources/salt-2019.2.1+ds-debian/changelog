@@ -1,0 +1,11 @@
+salt (2019.2.1+ds-0) stable; urgency=low
+
+  * Build of Salt 2019.2.1  for Python 2 and Python 3
+
+ -- Davide Madrisan <davide.madrisan@gmail.com>  Thu, 11 Jul 2019 15:32:00 +0000
+
+salt (2019.2.0+ds-1) stable; urgency=medium
+
+  * Build of Salt 2019.2.0  for Python 2 and Python 3
+
+ -- Salt Stack Packaging <packaging@saltstack.com>  Sat, 16 Feb 2019 04:43:18 +0000

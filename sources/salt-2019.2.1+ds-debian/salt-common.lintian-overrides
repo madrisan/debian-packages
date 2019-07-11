@@ -1,0 +1,33 @@
+# permissions on /var/log/salt to permit adm group ownership
+salt-common: non-standard-dir-perm
+
+# minor formatting error in table in man page
+salt-common: manpage-has-errors-from-man
+
+# These files do not need to be executable because they are
+# run on a remote machine by salt-cloud.
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/Arch-git.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/Arch.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/Debian-git.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/Debian.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/Fedora-git.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/Fedora.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/FreeBSD-git.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/FreeBSD.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/None.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/RHEL5-git.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/RHEL5.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/RHEL6-git.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/RHEL6.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/SmartOS.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/Ubuntu-git.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/Ubuntu.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/bootstrap-salt.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/curl-bootstrap-git.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/curl-bootstrap.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/python-bootstrap.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/wget-bootstrap-nocert.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/cloud/deploy/wget-bootstrap.sh
+salt-common: script-not-executable usr/lib/python2.7/dist-packages/salt/templates/debian_ip/route_eth.jinja
+
+

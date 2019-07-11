@@ -10,6 +10,7 @@
 #    make package PKG=py-zabbix
 #    make package PKG=pyvmomi
 #    make package PKG=redis4
+#    make package DISTRO=debian10 PKG=salt
 #
 # Default values:
 #    COMPOSE: /usr/local/bin/docker-compose
