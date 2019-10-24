@@ -6,6 +6,7 @@ After=network-online.target
 Type=simple
 PIDFile=/run/vault/vault.pid
 ExecStart=/usr/bin/vault server -config=/etc/vault/config.hcl
+ExecReload=/bin/kill -s HUP $MAINPID
 User=vault
 Group=nogroup
 RuntimeDirectory=vault
