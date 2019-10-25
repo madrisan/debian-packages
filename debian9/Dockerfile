@@ -6,6 +6,10 @@ MAINTAINER "Davide Madrisan" <d.madrisan@gmail.com>
 WORKDIR /usr/local
 COPY --from=compiler /usr/local/go .
 
+# This symlink is required because of the following (broken) commit:
+# https://github.com/hashicorp/vault/commit/80a0b40c96a26dd7b779c90044d4e3a407cec619
+RUN (cd /usr/local/bin && ln -s go go1.11.5)
+
 ENV GOPATH /go
 RUN mkdir -p \
     "$GOPATH/src" \
