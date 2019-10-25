@@ -1,8 +1,8 @@
 # Build Debian packages in a Docker container
-# Copyright (c) 2017-2018 Davide Madrisan <davide.madrisan@gmail.com>
+# Copyright (c) 2017-2019 Davide Madrisan <davide.madrisan@gmail.com>
 #
 # Usage:
-#    make package DISTRO=debian9 PKG=vault
+#    make package DISTRO=debian9-go1.12 PKG=vault
 #    make package PKG=consul
 #    make package PKG=docker-compose
 #    make package PKG=docker-py
@@ -21,7 +21,7 @@ ifndef COMPOSE
         $(error "please install docker-compose or adjust the PATH environment")
 endif
 
-DISTRO := debian9
+DISTRO := debian9-go1.12
 # We set 'TMPDIR' to work-around the execution error:
 #    /usr/local/bin/docker-compose: \
 #      error while loading shared libraries: libz.so.1: \

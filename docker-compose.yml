@@ -9,10 +9,18 @@ services:
     - ./output/debian8:/opt/build
     - ./sources:/opt/sources
 
-  debian9:
+  debian9-go1.11.5:
     build:
       context: .
-      dockerfile: debian9/Dockerfile
+      dockerfile: debian9-go1.11.5/Dockerfile
+    volumes:
+    - ./output/debian9:/opt/build
+    - ./sources:/opt/sources
+
+  debian9-go1.12:
+    build:
+      context: .
+      dockerfile: debian9-go1.12/Dockerfile
     volumes:
     - ./output/debian9:/opt/build
     - ./sources:/opt/sources

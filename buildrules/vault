@@ -1,7 +1,7 @@
 # package name
 swname="vault"
 # package version
-swver="1.1.5"
+swver="1.2.3"
 
 # build functions
 
@@ -46,8 +46,8 @@ __install_build_dependencies() {
 
    codename=$(lsb_release -c -s)
 
-   echo "deb https://deb.nodesource.com/node_8.x $codename main" \
-      > /etc/apt/sources.list.d/nodejs-node_8.x.list
+   echo "deb https://deb.nodesource.com/node_10.x $codename main" \
+      > /etc/apt/sources.list.d/nodejs-node_10.x.list
    curl -sS https://deb.nodesource.com/gpgkey/nodesource.gpg.key \
       | apt-key add -
    echo "deb https://dl.yarnpkg.com/debian/ stable main" \
@@ -59,7 +59,7 @@ __install_build_dependencies() {
       && DEBIAN_FRONTEND=noninteractive \
          apt-get install -y \
            nodejs \
-           yarn   \
+           yarn=1.12.1-1 \
       && rm -rf /var/lib/apt/lists/* \
       && rm -rf /var/cache/apt/archives/*
 }
