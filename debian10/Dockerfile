@@ -1,4 +1,4 @@
-FROM golang:1.11.5-stretch as compiler
+FROM golang:1.12-buster as compiler
 FROM debian:buster-slim
 
 MAINTAINER "Davide Madrisan" <d.madrisan@gmail.com>
