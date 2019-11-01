@@ -1,7 +1,7 @@
 FROM golang:1.12-buster as compiler
 FROM debian:buster-slim
 
-MAINTAINER "Davide Madrisan" <d.madrisan@gmail.com>
+MAINTAINER "Davide Madrisan" <davide.madrisan@gmail.com>
 
 WORKDIR /usr/local
 COPY --from=compiler /usr/local/go .

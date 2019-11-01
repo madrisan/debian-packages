@@ -1,7 +1,7 @@
 FROM insecurity/golang:1.7 as compiler
 FROM debian:jessie
 
-MAINTAINER "Davide Madrisan" <d.madrisan@gmail.com>
+MAINTAINER "Davide Madrisan" <davide.madrisan@gmail.com>
 
 WORKDIR /usr/local
 COPY --from=compiler /usr/local/go .

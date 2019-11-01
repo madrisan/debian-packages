@@ -1,7 +1,7 @@
 FROM golang:1.12-stretch as compiler
 FROM debian:stretch
 
-MAINTAINER "Davide Madrisan" <d.madrisan@gmail.com>
+MAINTAINER "Davide Madrisan" <davide.madrisan@gmail.com>
 
 WORKDIR /usr/local
 COPY --from=compiler /usr/local/go .
