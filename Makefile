@@ -3,6 +3,7 @@
 #
 # Usage:
 #    make package DISTRO=debian9-go1.12 PKG=vault
+#    make package DISTRO=debian10 PKG=vault COMPOSE=/usr/local/bin/podman-compose
 #    make package PKG=consul
 #    make package PKG=docker-compose
 #    make package PKG=docker-py
@@ -13,12 +14,23 @@
 #    make package DISTRO=debian10 PKG=salt
 #
 # Default values:
-#    COMPOSE: /usr/local/bin/docker-compose
+#    COMPOSE: docker-compose
 #    DISTRO: debian9
 
 COMPOSE := $(shell command -v docker-compose 2>/dev/null)
-ifndef COMPOSE
-        $(error "please install docker-compose or adjust the PATH environment")
+
+ifeq "$(notdir $(COMPOSE))" "docker-compose"
+    COMPÖSE_BINARY = $(shell command -v docker-compose 2>/dev/null)
+    SUDO = sudo
+else ifeq "$(notdir $(COMPOSE))" "podman-compose"
+    COMPÖSE_BINARY = $(shell command -v podman-compose 2>/dev/null)
+    SUDO =
+else
+    $(error "only docker-compose and podman-compose are supported")
+endif
+
+ifndef COMPÖSE_BINARY
+    $(error "please install $(notdir $(COMPOSE)) or adjust the PATH environment")
 endif
 
 DISTRO := debian9-go1.12
@@ -34,13 +46,17 @@ ifdef PKG
 PACKAGES := $(PKG)
 endif
 
-dockerbuild: $(COMPOSE)
-	@sudo $(ENV) $(COMPOSE) build $(DISTRO)
+dockerbuild: $(COMPOSE_BINARY)
+ifeq "$(notdir $(COMPOSE))" "docker-compose"
+	@sudo $(ENV) $(COMPÖSE_BINARY) build $(DISTRO)
+else ifeq "$(notdir $(COMPOSE))" "podman-compose"
+	$(ENV) $(COMPÖSE_BINARY) build $(DISTRO)
+endif
 
 package: dockerbuild
 	@export TMPDIR=/var/tmp
 	@for pkg in $(PACKAGES); do \
-	   sudo $(ENV) $(COMPOSE) run --rm $(DISTRO) $$pkg; \
+	   sudo $(ENV) $(COMPÖSE_BINARY) run --rm $(DISTRO) $$pkg; \
 	done
 
 .PHONY : dockerbuild package
