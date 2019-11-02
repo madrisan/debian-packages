@@ -7,7 +7,7 @@ export GOPATH = /go
 export PATH = /go/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 
 %:
-	dh $@ --with=systemd
+	dh $@ --with systemd
 
 override_dh_auto_build:
 	mkdir -p pkg/web_ui
@@ -22,8 +22,10 @@ override_dh_install:
 	cp --reflink=auto -a ./bin/vault debian/vault/usr/bin/
 	install -d debian/vault-server/etc/vault
 	cp --reflink=auto -a ./debian/config/config.hcl debian/vault-server/etc/vault/
+	cp --reflink=auto -a ./debian/vault-server.vault.service debian/vault-server/vault.service
 
 override_dh_systemd_enable:
-	dh_systemd_enable -pvault-server --name vault vault-server.service
-# do not install the initscript on Debian 9
+	dh_systemd_enable -pvault-server --name vault vault.service
+
+# do not install the initscript on Debian 9+
 override_dh_installinit:
