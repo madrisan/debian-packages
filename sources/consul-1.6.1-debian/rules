@@ -25,6 +25,7 @@ override_dh_install:
 	cp --reflink=auto -a ./debian/consul.bash_autocompletion debian/consul/usr/share/bash-completion/completions/consul
 	install -d debian/consul/etc/consul.d
 	install -d debian/consul/var/lib/consul
+	cp --reflink=auto -a ./debian/consul.consul.service debian/consul/consul.service
 
 override_dh_systemd_enable:
 	dh_systemd_enable -pconsul --name consul consul.service
@@ -32,5 +33,5 @@ override_dh_systemd_enable:
 override_dh_systemd_start:
 	dh_systemd_start --restart-after-upgrade
 
-# do not install the initscript on Debian 9
+# do not install the initscript on Debian 9+
 override_dh_installinit:
