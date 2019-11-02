@@ -168,8 +168,9 @@ _Redis is an in-memory database that persists on disk_
 
 ## How to manually create the .deb packages and source files
 
-You can make use of the provided Makefile (requires the `make` tool)
-and enter the commands
+You can generate all the supported packages by using the provided `Makefile` (requires the `make` tool).
+
+### With Docker and Docker Compose
 
     make package PKG=consul
     make package PKG=vault
@@ -184,12 +185,33 @@ and enter the commands
 [Docker-CE][docker-ce] and [Docker Compose][docker-compose] must be installed in order
 the make command to work.
 
-Tested on Fedora 26 with docker-ce 17.09.1 and docker-compose 1.17.0,
-on Fedora 27 with docker-ce 17.12.0 and docker-compose 1.17.1,
-on Fedora 28 with docker-ce-18.03.1, and on Fedora 29 with docker-ce-18.06.1.ce-3.
+Tested on:
+
+ * Fedora 26 with `docker-ce` 17.09.1 and `docker-compose` 1.17.0,
+ * Fedora 27 with `docker-ce` 17.12.0 and `docker-compose` 1.17.1,
+ * Fedora 28 with `docker-ce` 18.03.1
+ * Fedora 29 with `docker-ce` 18.06.1
+ * Fedora 30
+
+### With Podman and Podman Compose
+
+#### Debian 9 (Stretch)
+
+    make package PKG=vault DISTRO=debian9-go1.12 COMPOSE=podman-compose
+
+#### Debian 10 (Buster)
+
+    make package PKG=vault DISTRO=debian10 COMPOSE=podman-compose
+
+Tested on Fedora 31 with [Podman][podman] version 1.6.2 and [Podman Compose][podman-compose] version 0.1.6dev.
+
 
 [docker-ce]: https://www.docker.com/community-edition/
 [docker-compose]: https://docs.docker.com/compose/
+
+[podman]: https://podman.io/
+[podman-compose]: https://github.com/containers/podman-compose
+
 [pyinstaller]: http://www.pyinstaller.org/
 
 [consul-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/consul_1.2.2-1_amd64.deb
