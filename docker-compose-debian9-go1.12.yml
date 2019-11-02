@@ -1,0 +1,9 @@
+version: '3'
+services:
+  debian9-go1.12:
+    build:
+      context: .
+      dockerfile: debian9-go1.12/Dockerfile
+    volumes:
+    - ./output/debian9:/opt/build:Z
+    - ./sources:/opt/sources:Z

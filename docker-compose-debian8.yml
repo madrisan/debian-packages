@@ -1,0 +1,9 @@
+version: '3'
+services:
+  debian8:
+    build:
+      context: .
+      dockerfile: debian8/Dockerfile
+    volumes:
+    - ./output/debian8:/opt/build:Z
+    - ./sources:/opt/sources:Z

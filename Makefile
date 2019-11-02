@@ -47,11 +47,7 @@ PACKAGES := $(PKG)
 endif
 
 dockerbuild: $(COMPOSE_BINARY)
-ifeq "$(notdir $(COMPOSE))" "docker-compose"
-	@sudo $(ENV) $(COMPÖSE_BINARY) build $(DISTRO)
-else ifeq "$(notdir $(COMPOSE))" "podman-compose"
-	$(ENV) $(COMPÖSE_BINARY) build $(DISTRO)
-endif
+	$(SUDO) $(ENV) $(COMPÖSE_BINARY) -f docker-compose-$(DISTRO).yml build
 
 package: dockerbuild
 	@export TMPDIR=/var/tmp
