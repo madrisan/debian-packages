@@ -40,6 +40,7 @@ DISTRO := debian9-go1.12
 #      failed to map segment from shared object
 # that occurs when /tmp is mounted with the 'noexec' flag
 ENV := TMPDIR=/var/tmp
+OUTPUTDIR = output/$(DISTRO)
 
 PACKAGES := $(notdir $(wildcard $(DISTRO)/data/*))
 ifdef PKG
@@ -47,12 +48,13 @@ PACKAGES := $(PKG)
 endif
 
 dockerbuild: $(COMPOSE_BINARY)
+	@mkdir -p $(OUTPUTDIR)
 	$(SUDO) $(ENV) $(COMPÖSE_BINARY) -f docker-compose-$(DISTRO).yml build
 
 package: dockerbuild
 	@export TMPDIR=/var/tmp
 	@for pkg in $(PACKAGES); do \
-	   $(SUDO) $(ENV) $(COMPÖSE_BINARY) run --rm $(DISTRO) $$pkg; \
+	   $(SUDO) $(ENV) $(COMPÖSE_BINARY) -f docker-compose-$(DISTRO).yml run --rm $(DISTRO) $$pkg; \
 	done
 
 .PHONY : dockerbuild package
