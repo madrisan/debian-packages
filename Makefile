@@ -56,7 +56,7 @@ endif
 package: dockerbuild
 	@export TMPDIR=/var/tmp
 	@for pkg in $(PACKAGES); do \
-	   sudo $(ENV) $(COMPÖSE_BINARY) run --rm $(DISTRO) $$pkg; \
+	   $(SUDO) $(ENV) $(COMPÖSE_BINARY) run --rm $(DISTRO) $$pkg; \
 	done
 
 .PHONY : dockerbuild package
