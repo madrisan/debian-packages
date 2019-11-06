@@ -20,10 +20,10 @@
 COMPOSE := $(shell command -v docker-compose 2>/dev/null)
 
 ifeq "$(notdir $(COMPOSE))" "docker-compose"
-    COMPÖSE_BINARY = $(shell command -v docker-compose 2>/dev/null)
+    COMPOSE_BINARY = $(shell command -v docker-compose 2>/dev/null)
     SUDO = sudo
 else ifeq "$(notdir $(COMPOSE))" "podman-compose"
-    COMPÖSE_BINARY = $(shell command -v podman-compose 2>/dev/null)
+    COMPOSE_BINARY = $(shell command -v podman-compose 2>/dev/null)
     SUDO =
 else
     $(error "only docker-compose and podman-compose are supported")
