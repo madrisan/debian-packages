@@ -1,4 +1,4 @@
-# Build Debian packages in a Docker container
+# Build Debian packages in Docker or PodMan containers
 # Copyright (c) 2017-2019 Davide Madrisan <davide.madrisan@gmail.com>
 #
 # Usage:
@@ -21,16 +21,22 @@ COMPOSE := $(shell command -v docker-compose 2>/dev/null)
 
 ifeq "$(notdir $(COMPOSE))" "docker-compose"
     COMPOSE_BINARY = $(shell command -v docker-compose 2>/dev/null)
+    CONTAINER_ENGINE = docker
     SUDO = sudo
 else ifeq "$(notdir $(COMPOSE))" "podman-compose"
     COMPOSE_BINARY = $(shell command -v podman-compose 2>/dev/null)
+    CONTAINER_ENGINE = podman
     SUDO =
 else
     $(error "only docker-compose and podman-compose are supported")
 endif
 
-ifndef COMPÖSE_BINARY
+ifeq ($(COMPOSE_BINARY),)
     $(error "please install $(notdir $(COMPOSE)) or adjust the PATH environment")
+endif
+CONTAINER_ENGINE_BINARY = $(shell command -v $(CONTAINER_ENGINE) 2>/dev/null)
+ifeq ($(CONTAINER_ENGINE_BINARY),)
+    $(error "cannot find the $(CONTAINER_ENGINE) binary")
 endif
 
 DISTRO := debian9-go1.12
@@ -49,12 +55,12 @@ endif
 
 dockerbuild: $(COMPOSE_BINARY)
 	@mkdir -p $(OUTPUTDIR)
-	$(SUDO) $(ENV) $(COMPÖSE_BINARY) -f docker-compose-$(DISTRO).yml build
+	$(SUDO) $(ENV) $(COMPOSE_BINARY) -f docker-compose-$(DISTRO).yml build
 
 package: dockerbuild
 	@export TMPDIR=/var/tmp
 	@for pkg in $(PACKAGES); do \
-	   $(SUDO) $(ENV) $(COMPÖSE_BINARY) -f docker-compose-$(DISTRO).yml run --rm $(DISTRO) $$pkg; \
+	   $(SUDO) $(ENV) $(COMPOSE_BINARY) -f docker-compose-$(DISTRO).yml run --rm $(DISTRO) $$pkg; \
 	done
 
 .PHONY : dockerbuild package
