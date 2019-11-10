@@ -17,7 +17,7 @@
 #
 # Default values:
 #    COMPOSE: docker-compose
-#    DISTRO: debian9
+#    DISTRO: debian10
 
 COMPOSE := $(shell command -v docker-compose 2>/dev/null)
 
@@ -41,7 +41,7 @@ ifeq ($(CONTAINER_ENGINE_BINARY),)
     $(error "cannot find the $(CONTAINER_ENGINE) binary")
 endif
 
-DISTRO := debian9-go1.12
+DISTRO := debian10
 # We set 'TMPDIR' to work-around the execution error:
 #    /usr/local/bin/docker-compose: \
 #      error while loading shared libraries: libz.so.1: \
