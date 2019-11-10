@@ -6,7 +6,7 @@
 
 ![](images/HashiCorp-Vault-logo.png?raw=true "HashiCorp Vault")
 
-#### HashiCorp Vault - version 1.2.3
+#### HashiCorp Vault - version 1.2.4
 
 _A Tool for Managing Secrets_.
 
@@ -14,13 +14,17 @@ _A Tool for Managing Secrets_.
 * Git repository: https://github.com/hashicorp/vault
 
 * Debian source package:
-  * [[vault_1.2.3-1.dsc]][vault-dsc]
-  * [[vault_1.2.3.orig.tar.gz]][vault-orig]
-  * [[vault_1.2.3-1.debian.tar.xz]][vault-debian]
+  * [[vault_1.2.4-1.dsc]][vault-dsc]
+  * [[vault_1.2.4.orig.tar.gz]][vault-orig]
+  * [[vault_1.2.4-1.debian.tar.xz]][vault-debian]
 
 * Debian 9 (Stretch) binary packages:
-  * [[vault_1.2.3-1_amd64.deb]][vault-debpkg]
-  * [[vault-server_1.2.3-1_amd64.deb]][vault-server-debpkg]
+  * [[vault_1.2.4-1_amd64.deb]][vault-debpkg]
+  * [[vault-server_1.2.4-1_amd64.deb]][vault-server-debpkg]
+
+* Debian 10 (Buster) binary packages:
+  * [[vault_1.2.4-1_amd64.deb]][vault-debpkg-deb10]
+  * [[vault-server_1.2.4-1_amd64.deb]][vault-server-debpkg-deb10]
 
 ---
 
@@ -172,8 +176,10 @@ You can generate all the supported packages by using the provided `Makefile` (re
 
 ### With Docker and Docker Compose
 
-    make package PKG=consul
-    make package PKG=vault
+    make package DISTRO=debian9-go1.12.12 PKG=consul
+    make package DISTRO=debian9-go1.12.12 PKG=vault
+    make package DISTRO=debian10 PKG=consul
+    make package DISTRO=debian10 PKG=vault
     make package PKG=docker-compose
     make package PKG=docker-py
     make package PKG=dockerpy-creds
@@ -197,8 +203,8 @@ Tested on:
 
 #### Debian 9 (Stretch)
 
-    make package PKG=consul DISTRO=debian9-go1.12 COMPOSE=podman-compose
-    make package PKG=vault DISTRO=debian9-go1.12 COMPOSE=podman-compose
+    make package PKG=consul DISTRO=debian9-go1.12.12 COMPOSE=podman-compose
+    make package PKG=vault DISTRO=debian9-go1.12.12 COMPOSE=podman-compose
 
 #### Debian 10 (Buster)
 
@@ -231,6 +237,9 @@ Tested on Fedora 31 with [Podman][podman] version 1.6.2 and [Podman Compose][pod
 [vault-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_1.2.4-1.debian.tar.xz
 [vault-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_1.2.4-1.dsc
 [vault-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_1.2.4.orig.tar.gz
+
+[vault-debpkg-deb10]: https://github.com/madrisan/debian-packages/releases/download/v0.7.0/vault_1.2.4-1_amd64.deb
+[vault-server-debpkg-deb10]: https://github.com/madrisan/debian-packages/releases/download/v0.7.0/vault-server_1.2.4-1_amd64.deb
 
 [python-dockerpy-creds-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-dockerpycreds_0.2.2-1_all.deb
 [python3-dockerpy-creds-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python3-dockerpycreds_0.2.2-1_all.deb
