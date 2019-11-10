@@ -226,11 +226,11 @@ Tested on Fedora 31 with [Podman][podman] version 1.6.2 and [Podman Compose][pod
 [docker-compose-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.19.0-1.dsc
 [docker-compose-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/docker-compose_1.19.0.orig.tar.gz
 
-[vault-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_1.2.3-1_amd64.deb
-[vault-server-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault-server_1.2.3-1_amd64.deb
-[vault-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_1.2.3-1.debian.tar.xz
-[vault-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_1.2.3-1.dsc
-[vault-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_1.2.3.orig.tar.gz
+[vault-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_1.2.4-1_amd64.deb
+[vault-server-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault-server_1.2.4-1_amd64.deb
+[vault-debian]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_1.2.4-1.debian.tar.xz
+[vault-dsc]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_1.2.4-1.dsc
+[vault-orig]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/vault_1.2.4.orig.tar.gz
 
 [python-dockerpy-creds-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-dockerpycreds_0.2.2-1_all.deb
 [python3-dockerpy-creds-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python3-dockerpycreds_0.2.2-1_all.deb
