@@ -4,8 +4,8 @@
 # Usage:
 #    make package DISTRO=debian9-go1.12.12 PKG=vault
 #    make package DISTRO=debian9-go1.12.12 PKG=vault COMPOSE=podman-compose
-#    make package DISTRO=debian10 PKG=vault
-#    make package DISTRO=debian10 PKG=vault COMPOSE=podman-compose
+#    make package DISTRO=debian10-go1.12.12 PKG=vault
+#    make package DISTRO=debian10-go1.12.12 PKG=vault COMPOSE=podman-compose
 #    make package PKG=consul
 #    make package PKG=docker-compose
 #    make package PKG=docker-py

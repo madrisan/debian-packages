@@ -178,8 +178,8 @@ You can generate all the supported packages by using the provided `Makefile` (re
 
     make package DISTRO=debian9-go1.12.12 PKG=consul
     make package DISTRO=debian9-go1.12.12 PKG=vault
-    make package DISTRO=debian10 PKG=consul
-    make package DISTRO=debian10 PKG=vault
+    make package DISTRO=debian10-go1.12.12 PKG=consul
+    make package DISTRO=debian10-go1.12.12 PKG=vault
     make package PKG=docker-compose
     make package PKG=docker-py
     make package PKG=dockerpy-creds
