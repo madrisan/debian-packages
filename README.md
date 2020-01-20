@@ -23,9 +23,12 @@ _A Tool for Managing Secrets_.
   * [[vault-server_1.2.4-1_amd64.deb]][vault-server-debpkg]
 
 * Debian 10 (Buster) binary packages:
-  * [[vault_1.2.4-1_amd64.deb]][vault-debpkg-deb10]
-  * [[vault-server_1.2.4-1_amd64.deb]][vault-server-debpkg-deb10]
-
+  * version 1.2.4
+    * [[vault_1.2.4-1_amd64.deb]][vault-debpkg-deb10]
+    * [[vault-server_1.2.4-1_amd64.deb]][vault-server-debpkg-deb10]
+  * version 1.3.1
+    * [[vault_1.3.1-1_amd64.deb]][vault-debpkg-deb10-131]
+    * [[vault-server_1.3.1-1_amd64.deb]][vault-server-debpkg-deb10-131]
 ---
 
 ![](images/HashiCorp-Consul-logo.png?raw=true "HashiCorp Consul")
@@ -240,6 +243,9 @@ Tested on Fedora 31 with [Podman][podman] version 1.6.2 and [Podman Compose][pod
 
 [vault-debpkg-deb10]: https://github.com/madrisan/debian-packages/releases/download/v0.7.0/vault_1.2.4-1_amd64.deb
 [vault-server-debpkg-deb10]: https://github.com/madrisan/debian-packages/releases/download/v0.7.0/vault-server_1.2.4-1_amd64.deb
+
+[vault-debpkg-deb10-131]: https://github.com/madrisan/debian-packages/releases/download/v0.7.0/vault_1.3.1-1_amd64.deb
+[vault-server-debpkg-deb10-131]: https://github.com/madrisan/debian-packages/releases/download/v0.7.0/vault-server_1.3.1-1_amd64.deb
 
 [python-dockerpy-creds-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python-dockerpycreds_0.2.2-1_all.deb
 [python3-dockerpy-creds-debpkg]: https://github.com/madrisan/debian-packages/releases/download/v0.6.0/python3-dockerpycreds_0.2.2-1_all.deb
