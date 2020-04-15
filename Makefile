@@ -57,7 +57,7 @@ PACKAGES := $(PKG)
 endif
 
 dockerbuild: $(COMPOSE_BINARY)
-	@mkdir -p output/debian9
+	@mkdir -p output/debian{9,10}
 	@mkdir -p $(OUTPUTDIR)
 	$(SUDO) $(ENV) $(COMPOSE_BINARY) -f docker-compose-$(DISTRO).yml build
 
