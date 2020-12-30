@@ -1,0 +1,9 @@
+version: '3'
+services:
+  debian10-go1.14:
+    build:
+      context: .
+      dockerfile: debian10-go1.14/Dockerfile
+    volumes:
+    - ./output/debian10:/opt/build:Z
+    - ./sources:/opt/sources:Z
