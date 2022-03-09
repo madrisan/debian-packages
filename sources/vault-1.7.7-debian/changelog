@@ -1,3 +1,9 @@
+vault (1.7.7-1) stretch; urgency=medium
+
+  * New upstream release.
+
+ -- Davide Madrisan <d.madrisan@gmail.com>  Wed, 09 Mar 2022 23:25:50 +0200
+
 vault (1.5.8-1) stretch; urgency=medium
 
   * New upstream release.

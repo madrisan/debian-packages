@@ -1,4 +1,4 @@
-FROM golang:1.14.9-buster as compiler
+FROM golang:1.15-buster as compiler
 FROM debian:buster-slim
 
 MAINTAINER "Davide Madrisan" <davide.madrisan@gmail.com>
