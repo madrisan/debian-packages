@@ -1,7 +1,7 @@
 # package name
 swname="vault"
 # package version
-swver="1.5.8"
+swver="1.7.7"
 
 # build functions
 
@@ -46,8 +46,8 @@ __install_build_dependencies() {
 
    codename=$(lsb_release -c -s)
 
-   echo "deb https://deb.nodesource.com/node_10.x $codename main" \
-      > /etc/apt/sources.list.d/nodejs-node_10.x.list
+   echo "deb https://deb.nodesource.com/node_14.x $codename main" \
+      > /etc/apt/sources.list.d/nodejs-node_14.x.list
    curl -sS https://deb.nodesource.com/gpgkey/nodesource.gpg.key \
       | apt-key add -
    echo "deb https://dl.yarnpkg.com/debian/ stable main" \
