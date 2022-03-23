@@ -23,9 +23,8 @@ _A Tool for Managing Secrets_.
   * [[vault-server_1.9.4-1_amd64.deb]][vault-server-debpkg]
 
 * Debian 10 (Buster) binary packages:
-  * version 1.9.4
-    * [[vault_1.9.4-1_amd64.deb]][vault-debpkg-deb10]
-    * [[vault-server_1.9.4-1_amd64.deb]][vault-server-debpkg-deb10]
+  * [[vault_1.9.4-1_amd64.deb]][vault-debpkg-deb10]
+  * [[vault-server_1.9.4-1_amd64.deb]][vault-server-debpkg-deb10]
 ---
 
 ![](images/HashiCorp-Consul-logo.png?raw=true "HashiCorp Consul")
