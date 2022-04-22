@@ -6,7 +6,7 @@
 
 ![](images/HashiCorp-Vault-logo.png?raw=true "HashiCorp Vault")
 
-#### HashiCorp Vault - version 1.9.4
+#### HashiCorp Vault - version 1.9.5
 
 _A Tool for Managing Secrets_.
 
