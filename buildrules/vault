@@ -23,6 +23,13 @@ __get_source_code() {
    cp -pr "${swname}-${swver}-debian" \
           "${swname}-${swver}/debian"
 
+   case "$DISTRO" in
+      debian11-*)
+         mv ${swname}-${swver}/debian/control-debian11 \
+            ${swname}-${swver}/debian/control ;;
+      *) rm -f ${swname}-${swver}/debian/control-debian11 ;;
+   esac
+
    rm -fr /go/src/github.com/hashicorp
    mkdir -p /go/src/github.com/hashicorp
    # go expect th find the source in the GOPATH (see debian/rules)

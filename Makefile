@@ -4,9 +4,10 @@
 # Usage:
 #    make package DISTRO=debian9-go1.17 PKG=vault
 #    make package DISTRO=debian9-go1.17 PKG=vault COMPOSE=podman-compose
-#    make package DISTRO=debian10 PKG=vault
 #    make package DISTRO=debian10-go1.17 PKG=vault
 #    make package DISTRO=debian10-go1.17 PKG=vault COMPOSE=podman-compose
+#    make package DISTRO=debian11-go1.17 PKG=vault
+#    make package DISTRO=debian11-go1.17 PKG=vault COMPOSE=podman-compose
 #    make package PKG=consul
 #    make package PKG=docker-compose
 #    make package PKG=docker-py
@@ -18,7 +19,7 @@
 #
 # Default values:
 #    COMPOSE: docker-compose
-#    DISTRO: debian10
+#    DISTRO: debian11
 
 COMPOSE := $(shell command -v docker-compose 2>/dev/null)
 
@@ -42,7 +43,7 @@ ifeq ($(CONTAINER_ENGINE_BINARY),)
     $(error "cannot find the $(CONTAINER_ENGINE) binary")
 endif
 
-DISTRO := debian10
+DISTRO := debian11
 # We set 'TMPDIR' to work-around the execution error:
 #    /usr/local/bin/docker-compose: \
 #      error while loading shared libraries: libz.so.1: \
@@ -64,7 +65,8 @@ dockerbuild: $(COMPOSE_BINARY)
 package: dockerbuild
 	@export TMPDIR=/var/tmp
 	@for pkg in $(PACKAGES); do \
-	   $(SUDO) $(ENV) $(COMPOSE_BINARY) -f docker-compose-$(DISTRO).yml run --rm $(DISTRO) $$pkg; \
+	   $(SUDO) $(ENV) $(COMPOSE_BINARY) -f docker-compose-$(DISTRO).yml \
+	      run -e DISTRO=$(DISTRO) --rm $(DISTRO) $$pkg; \
 	done
 
 .PHONY : dockerbuild package
